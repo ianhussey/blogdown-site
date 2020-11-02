@@ -4,9 +4,7 @@
     <div class="row">
       <div class="col-md-6">
         <p>
-          {{ with site.Copyright }}{{ replace . "{year}" now.Year | markdownify}} &middot; {{ end }}
-          Powered by
-          <a href="https://gethugothemes.com" target="_blank" rel="noopener">Gethugothemes</a>
+          {{ with site.Copyright }}{{ replace . "{year}" now.Year | markdownify}} {{ end }}
         </p>
       </div>
       <div class="col-md-6">
