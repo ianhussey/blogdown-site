@@ -4,8 +4,8 @@ authors:
 avatar_image: headshot.jpg
 bio: Predicting and influencing behaviour by understanding its function and context. Often with fancy stats and cool graphs.
 btn:
-- label: Download CV
-  url: https://sourcethemes.com/academic/docs/derp/
+- label: Download Resume
+  url: "files/ian_hussey_resume.pdf"
 display_education: true
 education:
   courses:
