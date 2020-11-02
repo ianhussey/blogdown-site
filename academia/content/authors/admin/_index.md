@@ -3,7 +3,6 @@ authors:
 - admin
 avatar_image: headshot.jpg
 bio: Predicting and influencing behaviour by understanding its function and context. Often with fancy stats and cool graphs.
-  matter.
 btn:
 - label: Download CV
   url: https://sourcethemes.com/academic/docs/derp/
@@ -26,7 +25,7 @@ name: Ian Hussey
 organizations:
 - name: Ghent University
   url: ""
-role: Postdoctoral Research Fellow
+role: Behavioral and Data Scientist
 social:
 - icon: envelope
   icon_pack: fas
