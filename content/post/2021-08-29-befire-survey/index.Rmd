@@ -1,0 +1,398 @@
+---
+title: "Analysis of /r/BEfire survey data"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  html_document:
+    code_folding: hide
+    highlight: haddock
+    theme: flatly
+    toc: yes
+    toc_float: yes
+categories: ["R"]
+tags: ["RMarkdown", "ggplot", "data wrangling", "dplyr"]
+---
+
+# To do 
+
+- Which additional comparisons are useful?
+- It would be nice to add some comparisons of all strategies but this data is a bit more annoying to wrangle so I havne't done it yet. I might do a limited version of it to ask what percentage of people (by age group) have are using the top single strategies (ETFs, stock/bond picking, RE, crypto) even if its not their main one. I'd be most interested to see what proportion of people have picking/crypto as a non primary strategy, as this would test my hunch that /r/BEfire folk are a lot more risk repetitive than vanilla FIRE strategies recommend.  
+
+```{r include=FALSE}
+
+knitr::opts_chunk$set(message = FALSE, 
+                      warning = FALSE)
+
+```
+
+# Dependencies 
+
+```{r}
+
+library(tidyverse)
+library(janitor)
+library(hrbrthemes)
+
+```
+
+# Data wrangling
+
+```{r}
+
+data_cleaned <- read_csv("data.csv") %>%
+  clean_names() %>%
+  select(age = whats_your_age,
+         language = my_mother_tongue_is,
+         region = where_do_you_live,
+         broker = who_is_your_main_broker,
+         target_date = what_is_your_fire_target_date,
+         main_strategy = my_main_strategy_is_investing_in_you_can_only_select_one,
+         strategies = but_my_portfolio_also_contains_you_can_select_multiple,
+         emergency_fund = how_big_is_your_emergency_fund,
+         portfolio_size = how_big_is_your_portfolio_not_including_your_home,
+         target_size = what_is_your_fire_target_portfolio_size,
+         saving_amount = how_much_do_you_save_each_month_choose_closest_netto_savings_rate_or_in_other_words_how_much_of_the_money_you_get_every_month_can_you_save,
+         saving_rate = what_is_your_savings_rate,
+         marital_status = i_answer_these_questions_as_a) %>%
+  mutate(age = case_when(age == "I am younger then 20 years of age" ~ "< 20",
+                         age == "I am in my 20's" ~ "20s",
+                         age == "I am in my 30's" ~ "30s",
+                         age == "I am in my 40's" ~ "40s",
+                         age == "I am in my 50's" ~ "50s"),
+         age = fct_relevel(age, "< 20", "20s", "30s", "40s", "50s"),
+         portfolio_size = case_when(portfolio_size == "Between 0 and 25k€"    ~ "€0 - €25k",
+                                    portfolio_size == "Between 25 and 50k€"   ~ "€25 - €50k",
+                                    portfolio_size == "Between 50 and 75k€"   ~ "€50 - €75k",
+                                    portfolio_size == "Between 75 and 100k€"  ~ "€75 - €100k",
+                                    portfolio_size == "Between 100 and 125k€" ~ "€100 - €125k",
+                                    portfolio_size == "Between 125 and 150k€" ~ "€125 - €150k",
+                                    portfolio_size == "Between 150 and 200k€" ~ "€150 - €200k",
+                                    portfolio_size == "Between 200 and 250k€" ~ "€200 - €250k",
+                                    portfolio_size == "Between 250 and 300k€" ~ "€250 - €300k",
+                                    portfolio_size == "Between 300 and 350k€" ~ "€300 - €350k",
+                                    portfolio_size == "Between 350 and 400k€" ~ "€350 - €400k",
+                                    portfolio_size == "Between 400 and 450k€" ~ "€400 - €450k",
+                                    portfolio_size == "Between 450 and 500k€" ~ "€450 - €500k",
+                                    portfolio_size == "Between 500 and 550k€" ~ "€500 - €550k",
+                                    portfolio_size == "Between 550 and 600k€" ~ "€550 - €600k",
+                                    portfolio_size == "Between 600 and 700k€" ~ "€600 - €700k",
+                                    portfolio_size == "Between 700 and 800k€" ~ "€700 - €800k",
+                                    portfolio_size == "Between 800 and 900k€" ~ "€800 - €900k",
+                                    portfolio_size == "Between 900 and 1M€"   ~ "€900 - €1M",
+                                    portfolio_size == "More then 1M€"         ~ "> €1M"),
+         portfolio_size = fct_relevel(portfolio_size, 
+                                      "€0 - €25k",
+                                      "€25 - €50k",
+                                      "€50 - €75k",
+                                      "€75 - €100k",
+                                      "€100 - €125k",
+                                      "€125 - €150k",
+                                      "€150 - €200k",
+                                      "€200 - €250k",
+                                      "€250 - €300k",
+                                      "€300 - €350k",
+                                      "€350 - €400k",
+                                      "€400 - €450k",
+                                      "€450 - €500k",
+                                      "€500 - €550k",
+                                      "€550 - €600k",
+                                      "€600 - €700k",
+                                      "€700 - €800k",
+                                      "€800 - €900k",
+                                      "€900 - €1M",
+                                      "> €1M"),
+         main_strategy = case_when(
+           main_strategy == "Broadly diversified share ETF's (according to BE-FIRE strategy: accumulating & Ireland based & etc...)" ~ "ETFs",
+           main_strategy == "Savings Accounts (not started investing yet; ETFs in the future)" ~ "Savings Accounts",
+           main_strategy == "Crypto currency" ~ "Crypto",
+           main_strategy == "Physical real estate (house - apartment - garage - agricultural - etc...)" ~ "Real estate",
+           main_strategy == "Single shares or bonds" ~ "Single shares or bonds",
+           main_strategy == "TAK21 Pension saving" ~ "TAK21 pension",
+           main_strategy == "Commodities: Gold - Silver - Platinum - etc..." ~ "Commodities",
+           main_strategy == "Just starting. No idea yet, but I think I will follow befire Belgium idea" ~ "Just started",
+           main_strategy == "REIT ETF's (ETF's which buy's shares of multiple REIT's)" ~ "REIT ETFs",
+           main_strategy == "Mutual share funds" ~ "Mutual share funds",
+           main_strategy == "Mutual bond funds" ~ "Mutual bond funds",
+           main_strategy == "Equity REIT's (investment company investing in Real Estate)" ~ "Equity REITs",
+           main_strategy == "Options" ~ "Options",
+           main_strategy == "Alternative investments (Wine - Whiskey - Cars - Arts - etc...)" ~ "Alternatives",
+           main_strategy == "TAK23 Pension saving" ~ "TAK23 pension",
+           main_strategy == "time deposits with 2.25 to 5.5% returns" ~ "Timed deposits",
+           main_strategy == "All world all cap Index mutual funds" ~ "All worlds all cap mutual funds"
+         ),
+         main_strategy = fct_relevel(main_strategy, 
+                                     "ETFs",
+                                     "Single shares or bonds",
+                                     "Real estate",
+                                     "Timed deposits",
+                                     "Crypto",
+                                     "Just started",
+                                     "Savings Accounts",
+                                     "TAK21 pension",
+                                     "TAK23 pension",
+                                     "Commodities",
+                                     "REITs",
+                                     "REIT ETFs",
+                                     "Mutual share funds",
+                                     "Mutual bond funds",
+                                     "Options",
+                                     "All worlds all cap mutual funds",
+                                     "Alternatives"),
+         
+         # strategies = str_replace_all(strategies, "Broadly diversified share ETF's (according to BE-FIRE strategy: accumulating & Ireland based & etc...)", "ETFs"),
+         # str_replace_all(strategies, "Savings Accounts (not started investing yet; ETFs in the future)", "Savings Accounts"),
+         # strategies = str_replace_all(strategies, "Crypto currency", "Crypto"),
+         # strategies = str_replace_all(strategies, "Physical real estate (house - apartment - garage - agricultural - etc...)", "Real estate"),
+         # strategies = str_replace_all(strategies, "Single shares or bonds", "Single shares or bonds"),
+         # strategies = str_replace_all(strategies, "TAK21 Pension saving", "TAK21 pension"),
+         # strategies = str_replace_all(strategies, "Commodities: Gold - Silver - Platinum - etc...", "Commodities"),
+         # strategies = str_replace_all(strategies, "Just starting. No idea yet, but I think I will follow befire Belgium idea", "Just started"),
+         # strategies = str_replace_all(strategies, "REIT ETF's (ETF's which buy's shares of multiple REIT's)", "REIT ETFs"),
+         # strategies = str_replace_all(strategies, "Mutual share funds", "Mutual share funds"),
+         # strategies = str_replace_all(strategies, "Mutual bond funds", "Mutual bond funds"),
+         # strategies = str_replace_all(strategies, "Equity REIT's (investment company investing in Real Estate)", "Equity REITs"),
+         # strategies = str_replace_all(strategies, "Options", "Options"),
+         # strategies = str_replace_all(strategies, "Alternative investments (Wine - Whiskey - Cars - Arts - etc...)", "Alternatives"),
+         # strategies = str_replace_all(strategies, "TAK23 Pension saving", "TAK23 pension"),
+         # strategies = str_replace_all(strategies, "time deposits with 2.25 to 5.5% returns", "Timed deposits"),
+         # strategies = str_replace_all(strategies, "All world all cap Index mutual funds", "All worlds all cap mutual funds"),
+         
+         target_size = case_when(
+           target_size == "Between 0 and 50k€"      ~ "€0 - €50k",
+           target_size == "Between 50 and 75k€"     ~ "€50 - €75k",
+           target_size == "Between 75 and 100k€"    ~ "€70 - €100k",
+           target_size == "Between 100 and 125k€"   ~ "€100 - €125k",
+           target_size == "Between 125 and 150k€"   ~ "€120 - €150k",
+           target_size == "Between 150 and 200k€"   ~ "€150 - €200k",
+           target_size == "Between 200 and 250k€"   ~ "€200 - €250k",
+           target_size == "Between 250 and 300k€"   ~ "€250 - €300k",
+           target_size == "Between 300 and 350k€"   ~ "€300 - €350k",
+           target_size == "Between 350 and 400k€"   ~ "€350 - €400k",
+           target_size == "Between 400 and 450k€"   ~ "€400 - €450k",
+           target_size == "Between 450 and 500k€"   ~ "€450 - €500k",
+           target_size == "Between 500 and 550k€"   ~ "€500 - €550k",
+           target_size == "Between 550 and 600k€"   ~ "€550 - €600k",
+           target_size == "Between 600 and 700k€"   ~ "€600 - €700k",
+           target_size == "Between 700 and 800k€"   ~ "€700 - €800k",
+           target_size == "Between 800 and 900k€"   ~ "€800 - €900k",
+           target_size == "Between 900 and 1M€"     ~ "€900 - €1M",
+           target_size == "Between 1M€ and 1.2M€"   ~ "€1M - €1.2M",
+           target_size == "Between 1.2M€ and 1.4M€" ~ "€1.2M - €1.4M",
+           target_size == "Between 1.4M€ and 1.6M€" ~ "€1.4M - €1.6M",
+           target_size == "Between 1.6M€ and 1.8M€" ~ "€1.6M - €1.8M",
+           target_size == "Between 1.8M€ and 2M€"   ~ "€1.8M - €2M",
+           target_size == "Between 2.2M€ and 2.4M€" ~ "€2.2M - €2.4M",
+           target_size == "Between 2.4M€ and 2.6M€" ~ "€2.4M - €2.6M",
+           target_size == "Between 2.6M€ and 2.8M€" ~ "€2.6M - €2.8M",
+           target_size == "Between 2.8M€ and 3M€"   ~ "€2.8M - €3M",
+           target_size == "Between 3M€ and 3.5M€"   ~ "€3M - €3.5M",
+           target_size == "Between 3.5M€ and 4M€"   ~ "€3.5M - €4M",
+           target_size == "Between 4M€ and 4.5M€"   ~ "€4M - €4.5M",
+           target_size == "Between 4.5M€ and 5M€"   ~ "€4.5M - €5M",
+           target_size == "Between 5M€ and 10M€"    ~ "€5M - €10M",
+           target_size == "Above 10M€...."          ~ "> €10M"
+         ),
+         target_size = fct_relevel(target_size,
+                                   "€0 - €50k",
+                                   "€50 - €75k",
+                                   "€70 - €100k",
+                                   "€100 - €125k",
+                                   "€120 - €150k",
+                                   "€150 - €200k",
+                                   "€200 - €250k",
+                                   "€250 - €300k",
+                                   "€300 - €350k",
+                                   "€350 - €400k",
+                                   "€400 - €450k",
+                                   "€450 - €500k",
+                                   "€500 - €550k",
+                                   "€550 - €600k",
+                                   "€600 - €700k",
+                                   "€700 - €800k",
+                                   "€800 - €900k",
+                                   "€900 - €1M",
+                                   "€1M - €1.2M",
+                                   "€1.2M - €1.4M",
+                                   "€1.4M - €1.6M",
+                                   "€1.6M - €1.8M",
+                                   "€1.8M - €2M",
+                                   "€2.2M - €2.4M",
+                                   "€2.4M - €2.6M",
+                                   "€2.6M - €2.8M",
+                                   "€2.8M - €3M",
+                                   "€3M - €3.5M",
+                                   "€3.5M - €4M",
+                                   "€4M - €4.5M",
+                                   "€4.5M - €5M",
+                                   "€5M - €10M",
+                                   "> €10M"))
+
+data_counts_age <- data_cleaned %>%
+  count(age) %>%
+  rename(n_age = n) %>%
+  drop_na()
+
+# data_cleaned %>%
+#   distinct(strategies)
+
+```
+
+# Current portfolio size by age group
+
+```{r}
+
+data_distinct_portfolio_size <- data_cleaned %>%
+  distinct(portfolio_size) %>%
+  drop_na()
+
+data_counts_age_portfolio_size_temp <- 
+  expand.grid(portfolio_size = data_distinct_portfolio_size$portfolio_size,
+              age = data_counts_age$age)
+
+data_counts_age_portfolio_size <- data_cleaned %>%
+  count(age, portfolio_size) %>%
+  # full_join(data_counts_age_portfolio_size_temp, by = c("age", "portfolio_size")) %>%
+  # mutate(n = ifelse(is.na(n), 0, n)) %>%
+  full_join(data_counts_age, by = "age") %>%
+  mutate(percent_age = n/n_age*100,
+         percent_total = n/sum(n)*100) %>%
+  drop_na() 
+
+```
+
+```{r eval=FALSE, include=FALSE}
+
+ggplot(data_counts_age_portfolio_size, aes(age, portfolio_size, fill = percent_total)) +
+  geom_tile() +
+  scale_fill_viridis_c()  +
+  labs(x = "Age",
+       y = "Portfolio size",
+       fill = "Percent of respondents") +
+  theme_minimal()
+   
+```
+
+- If we just look at number of respondents, young people just starting out are over-represented in the /r/BEfire community. However, this picture gets more complex once we stratify by age groups in the next plot.
+
+```{r}
+
+ggplot(data_counts_age_portfolio_size, aes(age, portfolio_size, fill = percent_age)) +
+  geom_tile() +
+  scale_fill_viridis_c()  +
+  labs(x = "Age",
+       y = "Portfolio size",
+       fill = "Percent of respondents by age group") +
+  theme_minimal()
+
+```
+
+- Apart from a large proportion of people under 20 (understandably) having a small portfolio, age bracket is not strongly correlated with portfolio size. I.e., there are comparable proportions of younger people with large portfolios and older people with smaller portfolios. When it comes to portfolio size within age groups, /r/BEfire is a diverse group.  
+
+# Main investment strategy by age group
+
+```{r}
+
+data_distinct_main_strategy <- data_cleaned %>%
+  distinct(main_strategy) %>%
+  drop_na()
+
+data_counts_age_main_strategy_temp <- 
+  expand.grid(main_strategy = data_distinct_main_strategy$main_strategy,
+              age = data_counts_age$age)
+
+data_counts_age_main_strategy <- data_cleaned %>%
+  count(age, main_strategy) %>%
+  # full_join(data_counts_age_main_strategy_temp, by = c("age", "main_strategy")) %>%
+  # mutate(n = ifelse(is.na(n), 0, n)) %>%
+  full_join(data_counts_age, by = "age") %>%
+  mutate(percent_age = n/n_age*100,
+         percent_total = n/sum(n)*100) %>%
+  drop_na() 
+
+```
+
+```{r eval=FALSE, include=FALSE}
+
+ggplot(data_counts_age_main_strategy, aes(age, main_strategy, fill = percent_total)) +
+  geom_tile() +
+  scale_fill_viridis_c()  +
+  labs(x = "Age",
+       y = "Main strategy",
+       fill = "Percent of respondents") +
+  theme_minimal()
+
+```
+
+```{r}
+
+ggplot(data_counts_age_main_strategy, aes(age, main_strategy, fill = percent_age)) +
+  geom_tile() +
+  scale_fill_viridis_c()  +
+  labs(x = "Age",
+       y = "Main strategy",
+       fill = "Percent of respondents by age group") +
+  theme_minimal()
+
+```
+
+- Timed deposit savings accounts are only of interest as a main strategy to the over 50s, and crypto is only of interest to the under 50s.
+- TAK21 and TAK23 pension savings are relatively unpopular.
+- ETFs are the most popular main strategy within all age groups. ETFs, share/bond picking, real estate, timed depoit savings accounts, and crypto make up the large majority of strategies being used within all age brackets. 
+
+# Target portfolio size by age group
+
+```{r}
+
+data_distinct_target_size <- data_cleaned %>%
+  distinct(target_size) %>%
+  drop_na()
+
+data_counts_age_target_size_temp <- 
+  expand.grid(target_size = data_distinct_target_size$target_size,
+              age = data_counts_age$age)
+
+data_counts_age_target_size <- data_cleaned %>%
+  count(age, target_size) %>%
+  # full_join(data_counts_age_target_size_temp, by = c("age", "target_size")) %>%
+  # mutate(n = ifelse(is.na(n), 0, n)) %>%
+  full_join(data_counts_age, by = "age") %>%
+  mutate(percent_age = n/n_age*100,
+         percent_total = n/sum(n)*100) %>%
+  drop_na() 
+
+```
+
+```{r eval=FALSE, include=FALSE}
+
+ggplot(data_counts_age_target_size, aes(age, target_size, fill = percent_total)) +
+  geom_tile() +
+  scale_fill_viridis_c()  +
+  labs(x = "Age",
+       y = "Target portfolio size",
+       fill = "Percent of respondents") +
+  theme_minimal()
+
+```
+
+```{r}
+
+ggplot(data_counts_age_target_size, aes(age, target_size, fill = percent_age)) +
+  geom_tile() +
+  scale_fill_viridis_c()  +
+  labs(x = "Age",
+       y = "Target portfolio size",
+       fill = "Percent of respondents by age group") +
+  theme_minimal()
+
+```
+
+- The young are ambitious. Many of those aiming for fatFIRE territory (> €10M) are under 20 years old. 
+- Goals are more modest among all other age groups, with most people and age groups' goals lying within the €500k to €1.5M range.  
+
+
+
+
+
+
+
+
+
