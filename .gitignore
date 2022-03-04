@@ -10,3 +10,4 @@ Thumbs.db
 /resources/
 *.hugo_build.lock
 .hugo_build.lock
+.Rproj.user
