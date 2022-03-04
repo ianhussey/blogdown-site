@@ -1,0 +1,195 @@
+---
+title: "How old is old? Teaching regression with open data"
+author: "Ian Hussey"
+date: 2017-05-19
+output:
+  html_document:
+    code_folding: hide
+    highlight: haddock
+    theme: flatly
+    toc: yes
+    toc_float: yes
+categories: ["R"]
+tags: ["R Markdown", "plot", "regression"]
+---
+
+# Research questions
+
+1. What age would people chose to be if given the choice?
+2. How old is "old"? 
+3. Do opinions about 'how old is old' change with one's own age?
+
+## Open data
+
+This data was collected on [Project Implicit](https://implicit.harvard.edu/) and is freely available under a [CCO license](https://creativecommons.org/publicdomain/zero/1.0/) on the [Open Science Framework](https://osf.io/pbzcu/). 
+
+Specifically, I took the data from the Age related Implicit Association Test collected in 2015. 
+
+```{r get and clean data, message=FALSE, warning=FALSE}
+
+# dependencies ------------------------------------------------------------
+
+library(tidyverse)
+library(psych)
+library(knitr)
+library(broom)
+
+```
+
+
+```{r eval=FALSE, include=FALSE}
+
+# # get data
+# data_demo_iat_2015_age <- read_rds("data/data_demo_iat_2015_age.rds")
+# 
+# # trim
+# data_trimmed <- data_demo_iat_2015_age %>%
+#   select(session_id,
+#          age,
+#          sex,
+#          choosetobe,
+#          feel,
+#          hopetolive,
+#          othersthink,
+#          atoma,  # A person moves from being an adult to middle-aged at what age?
+#          ctoya,  # A person moves from being a child to being a young adult at what age?
+#          matoo,  # A person moves from being middle-aged to being old at what age?
+#          yatoa) %>%  # A person moves from being a young adult to being an adult at what age?
+#   filter(!is.na(age)) %>%
+#   filter(sex == "m" | sex == "f")
+# 
+# # subset
+# data_choosetobe <- data_trimmed %>%
+#   filter(!is.na(choosetobe)) %>%
+#   select(age, choosetobe, sex) %>%
+#   mutate(age = as.integer(age),
+#          choosetobe = as.integer(choosetobe))
+# 
+# # save data to disk
+# write_rds(data_trimmed, "data/data_trimmed.rds")
+# write_rds(data_choosetobe, "data/data_choosetobe.rds")
+
+```
+
+```{r}
+
+data_trimmed <- read_rds("data/data_trimmed.rds")
+data_choosetobe <- read_rds("data/data_choosetobe.rds")
+
+```
+
+This gives us a lot of data to answer our questions:
+
+```{r choose to be - descriptives, message=FALSE, warning=FALSE}
+
+descriptives <- data_choosetobe %>%
+  select(age) %>%
+  describe() %>% 
+  select(n, mean, sd)
+
+descriptives %>%
+  mutate_if(is.numeric, round, digits = 2) %>%
+  kable()
+
+```
+
+# RQ1: What age would people chose to be if given the choice?
+
+## Plot the data
+
+I've added the usual least squared error regression line to allow us to make loose predictions from the plot.
+
+```{r, message=FALSE, warning=FALSE}
+
+ggplot(data = data_choosetobe) +
+  geom_jitter(aes(x = age, y = choosetobe), colour = "darkgreen", alpha = 0.1) +
+  geom_smooth(aes(x = age, y = choosetobe), method = "lm", colour = "darkorange") +
+  theme_minimal() +
+  xlab("Actual age") +
+  ylab("Age they wish to be")
+
+```
+
+Clearly, there are a subset of individuals who report that their ideal age is their curren age (see the thick green diagonal line of data). We'll put aside the question of subgroups, and instead ask questions about the average individual.  
+
+## Linear regression
+
+A linear regression can be used to make more specific predictions.
+
+```{r, message=FALSE, warning=FALSE}
+model_1 <- lm(choosetobe ~ age,
+              data = data_choosetobe)
+summary(model_1)
+```
+
+Conclusion: People want to be roughly half their age plus 10: current age * age estimate (0.52) + intercept (10.47)
+
+# RQ2: How old is old?
+
+```{r, message=FALSE, warning=FALSE}
+# reshape age transitions data
+transitions <- 
+  data_trimmed %>%
+  rename(`adult to middle` = atoma,  # A person moves from being an adult to middle-aged at what age?
+         `child to ya` = ctoya,  # A person moves from being a child to being a young adult at what age?
+         `middle to old` = matoo,  # A person moves from being middle-aged to being old at what age?
+         `ya to adult` = yatoa) %>%
+  gather(transition_type, transition_age, c(`adult to middle`, `child to ya`, `middle to old`, `ya to adult`)) %>%
+  mutate(transition_type = as.factor(transition_type)) %>%
+  filter(!is.na(transition_age), !is.na(transition_type))
+```
+
+## Plot the data
+
+```{r, message=FALSE, warning=FALSE}
+ggplot(transitions, aes(x = transition_age, colour = transition_type, fill = transition_type)) +
+  geom_density(alpha = 0.5, adjust = 5) +  # try changing the kernal smoothing width via adjust.
+  theme_minimal() +
+  xlab("Opinion on what age constitutes a given age label")
+```
+
+Rough preictions can be made from the graph. Interestingly, there seems to be more consensus (narrower distributions) about younger age transitions than old ones. 
+
+## Linear regression
+
+```{r, message=FALSE, warning=FALSE}
+model_2 <- lm(formula = transition_age ~ transition_type,
+              data = transitions)
+summary(model_2)
+```
+
+Childhood ends and young adulthood begins at 16: intercept (40) + transition_type child to young adult (-24)
+
+Young adulthood ends and adulthood begins at 22: intercept (40) + transition_type young adult to adult (-18)
+
+Adulthood ends and middle age beings at 40: intercept (40)
+
+Middle age ends and old age beings at 63: intercept (40) + transition_typemiddle to old (23)
+
+# Going deeper
+
+What if beliefs about age categories change as we age? More formally, is current age a moderator of beliefs about age categories? 
+
+## Plot the data again
+
+```{r, message=FALSE, warning=FALSE}
+ggplot(transitions, 
+       aes(x = age, y = transition_age, colour = transition_type, fill = transition_type)) +
+  geom_smooth(method = "lm") +
+  theme_minimal() +
+  ylab("Opinion on what age constitutes a given age label") +
+  xlab("Actual age")
+```
+
+Beliefs about childhood and young adulthood are relatively stable over time. However, beliefs about middle age and old age increase with age. 
+
+## Linear regression with interactions (moderation analysis)
+
+```{r, message=FALSE, warning=FALSE}
+model_3 <- lm(formula = transition_age ~ age * transition_type,
+              data = transitions)
+summary(model_3)
+```
+
+Again, specific predictions about estimated opinions about transition ages as a function of own age can be worked out from the table here (although are more complex in the case of interactions).
+

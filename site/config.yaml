@@ -1,0 +1,97 @@
+baseURL: https://mmmdata.io
+title: Ian Hussey, PhD
+languageCode: en-us
+theme: hugo-theme-hello-friend-ng
+PygmentsCodeFences: yes
+PygmentsStyle: monokai
+paginate: 10
+rssLimit: 10
+copyright: 
+archetypeDir: archetypes
+contentDir: content
+dataDir: data
+layoutDir: layouts
+publishDir: public
+buildDrafts: no
+buildFuture: no
+buildExpired: no
+canonifyURLs: yes
+enableRobotsTXT: yes
+enableGitInfo: no
+enableEmoji: yes
+enableMissingTranslationPlaceholders: no
+disableRSS: yes
+disableSitemap: no
+disable404: no
+disableHugoGeneratorInject: no
+permalinks:
+  posts: /posts/:year/:month/:title/
+author:
+  name: Ian Hussey
+blackfriday:
+  hrefTargetBlank: yes
+taxonomies:
+  category: categories
+  series: series
+  tag: tags
+params:
+  customCSS: []
+  customJS: []
+  dateform: Jan 2, 2006
+  dateformNum: '2006-01-02'
+  dateformNumTime: 2006-01-02 15:04
+  dateformShort: Jan 2
+  description: params description 
+  disableReadOtherPosts: no
+  enableGlobalLanguageMenu: no
+  enableSharingButtons: yes
+  enableThemeToggle: yes
+  favicon:
+    color:
+      mask: '#1b1c1d'
+      msapplication: '#1b1c1d'
+      theme: '#1b1c1d'
+  footer:
+    author: no
+    bottomText: no
+    copyright: no
+    rss: no
+    topText: []
+    trademark: no
+  homeSubtitle: 'Data Analyst | Behavioral Scientist'
+  images: ''
+  justifyContent: no
+  keywords: ''
+  logo:
+    logoHomeLink: /
+    logoMark: '>'
+    logoText: '$ cd /home/'
+  social:
+    - name: twitter
+      url: https://twitter.com/ianhussey
+    - name: email
+      url: mailto:ian.hussey@icloud.com
+    - name: github
+      url: https://github.com/ianhussey
+    - name: linkedin
+      url: https://www.linkedin.com/in/ian-hussey-phd
+    #- name: OSF  # no icon, doesn't work
+    #  url: https://osf.io/3kzh8/
+menu:
+  main:
+    - identifier: about
+      name: About
+      url: about/
+    - identifier: posts
+      name: Posts
+      url: posts/
+    - identifier: cv
+      name: CV
+      url: static/ian_hussey_cv.pdf
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+ignoreFiles: ["\\.Rmd$", "\\.Rmarkdown$", "_cache$"]

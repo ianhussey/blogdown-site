@@ -1,7 +1,6 @@
 *.Rproj.user
 *.Rhistory
 *.RData
-*.rds
 *.Ruserdata
 *.DS_Store
 .DS_Store
@@ -12,4 +11,3 @@ Thumbs.db
 *.hugo_build.lock
 .hugo_build.lock
 .Rproj.user
-

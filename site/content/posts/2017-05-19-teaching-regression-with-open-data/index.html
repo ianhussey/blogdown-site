@@ -1,0 +1,205 @@
+---
+title: "How old is old? Teaching regression with open data"
+author: "Ian Hussey"
+date: 2017-05-19
+output:
+  html_document:
+    code_folding: hide
+    highlight: haddock
+    theme: flatly
+    toc: yes
+    toc_float: yes
+categories: ["R"]
+tags: ["R Markdown", "plot", "regression"]
+---
+
+<script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
+
+
+<div id="research-questions" class="section level1">
+<h1>Research questions</h1>
+<ol style="list-style-type: decimal">
+<li>What age would people chose to be if given the choice?</li>
+<li>How old is “old”?</li>
+<li>Do opinions about ‘how old is old’ change with one’s own age?</li>
+</ol>
+<div id="open-data" class="section level2">
+<h2>Open data</h2>
+<p>This data was collected on <a href="https://implicit.harvard.edu/">Project Implicit</a> and is freely available under a <a href="https://creativecommons.org/publicdomain/zero/1.0/">CCO license</a> on the <a href="https://osf.io/pbzcu/">Open Science Framework</a>.</p>
+<p>Specifically, I took the data from the Age related Implicit Association Test collected in 2015.</p>
+<pre class="r"><code># dependencies ------------------------------------------------------------
+
+library(tidyverse)
+library(psych)
+library(knitr)
+library(broom)</code></pre>
+<pre class="r"><code>data_trimmed &lt;- read_rds(&quot;data/data_trimmed.rds&quot;)
+data_choosetobe &lt;- read_rds(&quot;data/data_choosetobe.rds&quot;)</code></pre>
+<p>This gives us a lot of data to answer our questions:</p>
+<pre class="r"><code>descriptives &lt;- data_choosetobe %&gt;%
+  select(age) %&gt;%
+  describe() %&gt;% 
+  select(n, mean, sd)
+
+descriptives %&gt;%
+  mutate_if(is.numeric, round, digits = 2) %&gt;%
+  kable()</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">n</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">X1</td>
+<td align="right">54639</td>
+<td align="right">26.78</td>
+<td align="right">12.27</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="rq1-what-age-would-people-chose-to-be-if-given-the-choice" class="section level1">
+<h1>RQ1: What age would people chose to be if given the choice?</h1>
+<div id="plot-the-data" class="section level2">
+<h2>Plot the data</h2>
+<p>I’ve added the usual least squared error regression line to allow us to make loose predictions from the plot.</p>
+<pre class="r"><code>ggplot(data = data_choosetobe) +
+  geom_jitter(aes(x = age, y = choosetobe), colour = &quot;darkgreen&quot;, alpha = 0.1) +
+  geom_smooth(aes(x = age, y = choosetobe), method = &quot;lm&quot;, colour = &quot;darkorange&quot;) +
+  theme_minimal() +
+  xlab(&quot;Actual age&quot;) +
+  ylab(&quot;Age they wish to be&quot;)</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>Clearly, there are a subset of individuals who report that their ideal age is their curren age (see the thick green diagonal line of data). We’ll put aside the question of subgroups, and instead ask questions about the average individual.</p>
+</div>
+<div id="linear-regression" class="section level2">
+<h2>Linear regression</h2>
+<p>A linear regression can be used to make more specific predictions.</p>
+<pre class="r"><code>model_1 &lt;- lm(choosetobe ~ age,
+              data = data_choosetobe)
+summary(model_1)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = choosetobe ~ age, data = data_choosetobe)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -53.786  -2.646   0.078   2.640 100.364 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 10.47359    0.07365   142.2   &lt;2e-16 ***
+## age          0.52036    0.00250   208.2   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 7.171 on 54637 degrees of freedom
+## Multiple R-squared:  0.4423, Adjusted R-squared:  0.4423 
+## F-statistic: 4.333e+04 on 1 and 54637 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>Conclusion: People want to be roughly half their age plus 10: current age * age estimate (0.52) + intercept (10.47)</p>
+</div>
+</div>
+<div id="rq2-how-old-is-old" class="section level1">
+<h1>RQ2: How old is old?</h1>
+<pre class="r"><code># reshape age transitions data
+transitions &lt;- 
+  data_trimmed %&gt;%
+  rename(`adult to middle` = atoma,  # A person moves from being an adult to middle-aged at what age?
+         `child to ya` = ctoya,  # A person moves from being a child to being a young adult at what age?
+         `middle to old` = matoo,  # A person moves from being middle-aged to being old at what age?
+         `ya to adult` = yatoa) %&gt;%
+  gather(transition_type, transition_age, c(`adult to middle`, `child to ya`, `middle to old`, `ya to adult`)) %&gt;%
+  mutate(transition_type = as.factor(transition_type)) %&gt;%
+  filter(!is.na(transition_age), !is.na(transition_type))</code></pre>
+<div id="plot-the-data-1" class="section level2">
+<h2>Plot the data</h2>
+<pre class="r"><code>ggplot(transitions, aes(x = transition_age, colour = transition_type, fill = transition_type)) +
+  geom_density(alpha = 0.5, adjust = 5) +  # try changing the kernal smoothing width via adjust.
+  theme_minimal() +
+  xlab(&quot;Opinion on what age constitutes a given age label&quot;)</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>Rough preictions can be made from the graph. Interestingly, there seems to be more consensus (narrower distributions) about younger age transitions than old ones.</p>
+</div>
+<div id="linear-regression-1" class="section level2">
+<h2>Linear regression</h2>
+<pre class="r"><code>model_2 &lt;- lm(formula = transition_age ~ transition_type,
+              data = transitions)
+summary(model_2)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = transition_age ~ transition_type, data = transitions)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -61.839  -2.839  -0.262   2.763  99.208 
+## 
+## Coefficients:
+##                               Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)                   40.26207    0.02859  1408.4   &lt;2e-16 ***
+## transition_typechild to ya   -24.47018    0.04041  -605.6   &lt;2e-16 ***
+## transition_typemiddle to old  22.57712    0.04041   558.7   &lt;2e-16 ***
+## transition_typeya to adult   -18.02481    0.04042  -445.9   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 6.672 on 218106 degrees of freedom
+## Multiple R-squared:  0.8823, Adjusted R-squared:  0.8823 
+## F-statistic: 5.451e+05 on 3 and 218106 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>Childhood ends and young adulthood begins at 16: intercept (40) + transition_type child to young adult (-24)</p>
+<p>Young adulthood ends and adulthood begins at 22: intercept (40) + transition_type young adult to adult (-18)</p>
+<p>Adulthood ends and middle age beings at 40: intercept (40)</p>
+<p>Middle age ends and old age beings at 63: intercept (40) + transition_typemiddle to old (23)</p>
+</div>
+</div>
+<div id="going-deeper" class="section level1">
+<h1>Going deeper</h1>
+<p>What if beliefs about age categories change as we age? More formally, is current age a moderator of beliefs about age categories?</p>
+<div id="plot-the-data-again" class="section level2">
+<h2>Plot the data again</h2>
+<pre class="r"><code>ggplot(transitions, 
+       aes(x = age, y = transition_age, colour = transition_type, fill = transition_type)) +
+  geom_smooth(method = &quot;lm&quot;) +
+  theme_minimal() +
+  ylab(&quot;Opinion on what age constitutes a given age label&quot;) +
+  xlab(&quot;Actual age&quot;)</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>Beliefs about childhood and young adulthood are relatively stable over time. However, beliefs about middle age and old age increase with age.</p>
+</div>
+<div id="linear-regression-with-interactions-moderation-analysis" class="section level2">
+<h2>Linear regression with interactions (moderation analysis)</h2>
+<pre class="r"><code>model_3 &lt;- lm(formula = transition_age ~ age * transition_type,
+              data = transitions)
+summary(model_3)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = transition_age ~ age * transition_type, data = transitions)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -74.891  -3.112  -0.192   2.917  99.513 
+## 
+## Coefficients:
+##                                    Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)                       36.223551   0.066651  543.48   &lt;2e-16 ***
+## age                                0.150666   0.002262   66.61   &lt;2e-16 ***
+## transition_typechild to ya       -20.983960   0.094203 -222.75   &lt;2e-16 ***
+## transition_typemiddle to old      20.605071   0.094216  218.70   &lt;2e-16 ***
+## transition_typeya to adult       -14.847563   0.094256 -157.52   &lt;2e-16 ***
+## age:transition_typechild to ya    -0.130060   0.003197  -40.68   &lt;2e-16 ***
+## age:transition_typemiddle to old   0.073592   0.003198   23.01   &lt;2e-16 ***
+## age:transition_typeya to adult    -0.118525   0.003199  -37.05   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 6.46 on 218102 degrees of freedom
+## Multiple R-squared:  0.8897, Adjusted R-squared:  0.8897 
+## F-statistic: 2.513e+05 on 7 and 218102 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>Again, specific predictions about estimated opinions about transition ages as a function of own age can be worked out from the table here (although are more complex in the case of interactions).</p>
+</div>
+</div>
