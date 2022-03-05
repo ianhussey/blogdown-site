@@ -86,7 +86,7 @@ menu:
       name: Posts
       url: posts/
     - identifier: cv_industry
-      name: Industry CV
+      name: CV
       url: static/ian_hussey_cv_industry.pdf
     - identifier: cv_academic
       name: Academic CV
