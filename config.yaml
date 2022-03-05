@@ -79,18 +79,19 @@ params:
     #  url: https://osf.io/3kzh8/
 menu:
   main:
-    - identifier: about
+    - identifier: 1_about
       name: About
       url: about/
-    - identifier: posts
-      name: Posts
-      url: posts/
-    - identifier: cv_industry
+    - identifier: 2_cv_industry
       name: Industry CV
       url: static/ian_hussey_cv_industry.pdf
-    - identifier: cv_academic
+    - identifier: 3_cv_academic
       name: Academic CV
       url: static/ian_hussey_cv_academic.pdf
+    - identifier: 4_posts
+      name: Posts
+      url: posts/
+
 
 markup:
   goldmark:
