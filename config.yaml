@@ -24,6 +24,7 @@ disableRSS: yes
 disableSitemap: no
 disable404: no
 disableHugoGeneratorInject: no
+googleAnalytics: "G-V56JQ8QJJD"
 permalinks:
   posts: /posts/:year/:month/:title/
 author:
