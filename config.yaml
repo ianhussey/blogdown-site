@@ -42,7 +42,7 @@ params:
   dateformNum: '2006-01-02'
   dateformNumTime: 2006-01-02 15:04
   dateformShort: Jan 2
-  description: 'Ian Hussey, PhD - Data Analyst & Behavioral Scientist'  
+  description: 'Ian Hussey, PhD'  
   disableReadOtherPosts: no
   enableGlobalLanguageMenu: no
   enableSharingButtons: yes
@@ -59,7 +59,7 @@ params:
     rss: no
     topText: []
     trademark: no
-  homeSubtitle: 'Data Analyst | Behavioral Scientist'
+  homeSubtitle: 'Meta-science researcher'
   images: ''
   justifyContent: no
   keywords: ''
@@ -74,8 +74,8 @@ params:
       url: mailto:ian.hussey@icloud.com
     - name: github
       url: https://github.com/ianhussey
-    - name: linkedin
-      url: https://www.linkedin.com/in/ian-hussey-phd
+    #- name: linkedin
+    #  url: https://www.linkedin.com/in/ian-hussey-phd
     #- name: OSF  # no icon, doesn't work
     #  url: https://osf.io/3kzh8/
 menu:
@@ -86,11 +86,11 @@ menu:
     - identifier: posts
       name: Posts
       url: posts/
-    - identifier: cv_industry
-      name: CV
-      url: static/ian_hussey_cv_industry.pdf
+#    - identifier: cv_industry
+#      name: CV
+#      url: static/ian_hussey_cv_industry.pdf
     - identifier: cv_academic
-      name: Academic CV
+      name: CV
       url: static/ian_hussey_cv_academic.pdf
 
 markup:
