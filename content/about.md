@@ -15,4 +15,4 @@ I have expertise in R, reproducibility, measurement, Radical Behaviorism, and su
 
 Other socials:
 - [Open Science Framework](https://osf.io/3kzh8/)
-- [Google Scholar](https://scholar.google.ie/citations?user=Sg6JZb0AAAAJ)
+- [Google Scholar](https://scholar.google.com/citations?user=Sg6JZb0AAAAJ)
