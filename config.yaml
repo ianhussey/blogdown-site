@@ -69,14 +69,16 @@ params:
     logoMark: '>'
     logoText: '$ cd /home/'
   social:
-    - name: twitter
-      url: https://twitter.com/ianhussey
+    #- name: twitter
+    #  url: https://twitter.com/ianhussey
+    - name: bluesky
+      https://bsky.app/profile/ianhussey.mmmdata.io
     - name: email
-      url: mailto:ian.hussey@icloud.com
+      url: mailto:ian.hussey@unibe.ch
     - name: github
       url: https://github.com/ianhussey
-    #- name: linkedin
-    #  url: https://www.linkedin.com/in/ian-hussey-phd
+    - name: linkedin
+      url: https://www.linkedin.com/in/ian-hussey-phd
     #- name: OSF  # no icon, doesn't work
     #  url: https://osf.io/3kzh8/
 menu:
