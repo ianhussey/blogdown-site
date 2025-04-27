@@ -4,7 +4,8 @@ languageCode: en-us
 theme: hugo-theme-hello-friend-ng
 PygmentsCodeFences: yes
 PygmentsStyle: monokai
-paginate: 10
+pagination:
+  pagerSize: 10
 rssLimit: 10
 copyright: 
 archetypeDir: archetypes
@@ -24,7 +25,6 @@ disableRSS: yes
 disableSitemap: no
 disable404: no
 disableHugoGeneratorInject: no
-googleAnalytics: "G-V56JQ8QJJD"
 permalinks:
   posts: /posts/:year/:month/:title/
 author:
@@ -36,6 +36,7 @@ taxonomies:
   series: series
   tag: tags
 params:
+  googleAnalytics: "G-V56JQ8QJJD"
   customCSS: []
   customJS: []
   dateform: Jan 2, 2006
@@ -99,3 +100,7 @@ markup:
       unsafe: true
 
 ignoreFiles: ["\\.Rmd$", "\\.Rmarkdown$", "_cache$"]
+
+staticFiles:
+  include:
+    - "**/.well-known/**"

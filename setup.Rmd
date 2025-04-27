@@ -1,9 +1,13 @@
 ```{r}
 
+library(blogdown)
+blogdown::install_hugo()
+
 blogdown::new_site(theme = "rhazdon/hugo-theme-hello-friend-ng") 
 
 blogdown::check_site()
 
+blogdown::build_site()
 blogdown::serve_site()
 blogdown::stop_server()
 

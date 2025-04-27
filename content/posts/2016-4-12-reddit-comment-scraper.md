@@ -2,7 +2,7 @@
 layout: single
 title: "Reddit comment scraper"
 sitemap: true
-date: 2016-8-16
+date: 2016-08-16
 ---
 
 Experimental-clinical psychologists have finally started to capitalise on naturalistic internet data sources for research. For example, recent papers using data from the social news aggregator [Reddit](http://www.reddit.com) (e.g., [Hipp et al., 2015](http://psycnet.apa.org/?&fa=main.doiLanding&doi=10.1037/a0039998)), and the social networking site [Tumblr](http://www.tumblr.com) (e.g., [Cavazos-Rehg et al., 2016](http://econtent.hogrefe.com/doi/abs/10.1027/0227-5910/a000409)).

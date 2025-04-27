@@ -2,7 +2,7 @@
 layout: single
 title: "Statistical Reporting Assessment"
 sitemap: true
-date: 2016-8-26
+date: 2016-08-26
 ---
 
 Even if your data and code are publicly available, you can still fall at the last hurdle by not reporting the correct numbers in a manuscript. Luckily, the [`statcheck`](http://rpubs.com/michelenuijten/202816) library can check this for you. 
