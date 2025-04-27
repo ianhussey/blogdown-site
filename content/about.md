@@ -5,13 +5,11 @@ aliases:
 - contact
 author:
   name: Ian Hussey
-date: "2023-05-15"
+date: "2025-04-27"
 title: About
 ---
 
-I'm an academic researcher in the area of Meta-science: the scientific study of the process of scientific knowledge production. Whereas Psychology studies human behavior, Meta-science studies the behavior of scientists.
-
-I have expertise in R, reproducibility, measurement, Radical Behaviorism, and suicide.
+I am Senior Lecturer for Digitalisation of Psychology at University of Bern, Switzerland. My research focuses son meta-science: science about science, or research on research. 
 
 Other socials:
 - [Open Science Framework](https://osf.io/3kzh8/)
