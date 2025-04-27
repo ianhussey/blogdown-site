@@ -14,8 +14,6 @@ categories: ["R"]
 tags: ["Monte Carlo simulation", "tidy"]
 ---
 
-<script src="{{< blogdown/postref >}}index_files/kePrint/kePrint.js"></script>
-<link href="{{< blogdown/postref >}}index_files/lightable/lightable.css" rel="stylesheet" />
 
 
 <p>Simulation studies are extremely useful for understanding how statistical methods work, what happens when you violate their assumptions, for calculating statistical power, for understanding the consequences of p-hacking, and many other things. However, they can also be somewhat inaccessible or have a steep learning curve. In order to make them more accessible for people already familiar with {tidyverse} packages such as {dplyr} and {tidyr} and the concept of Tidy Data, I spent some time constructing a general workflow for simulations within a tidy workflow using {purrr}.</p>
@@ -54,8 +52,8 @@ generate_data &lt;- function(n_per_condition,
   return(data_combined)
 }</code></pre>
 </div>
-<div id="define-analsyis-function" class="section level1">
-<h1>Define analsyis function</h1>
+<div id="define-analysis-function" class="section level1">
+<h1>Define analysis function</h1>
 <p>Apply an independent Student’s t-test to the data and extract the <em>p</em>-value as a column in a tibble.</p>
 <pre class="r"><code>analyze &lt;- function(data) {
 
@@ -103,7 +101,7 @@ simulation &lt;- experiment_parameters |&gt;
 </div>
 <div id="run-results-across-iterations" class="section level1">
 <h1>Run results across iterations</h1>
-<p>Unnest the nested data in the results column and then, for each of the experiment conditions, summarize the proportion of significant <em>p</em>-values iterations. Print a table and plot of the results.</p>
+<p>Unnest the nested data in the results column and then, for each of the experiment conditions, summarize the proportion of significant <em>p</em>-values iterations. Print a plot of the results.</p>
 <pre class="r"><code># summarize across iterations
 simulation_summary &lt;- simulation |&gt;
   # unnest results
@@ -114,46 +112,12 @@ simulation_summary &lt;- simulation |&gt;
   mutate(significant = p &lt; .05) |&gt;
   summarize(proportion_of_significant_p_values = mean(significant))
 
-# table of results
-simulation_summary |&gt;
-  mutate_if(is.numeric, janitor::round_half_up, digits = 2) |&gt;
-  kable() |&gt;
-  kable_classic(full_width = FALSE)</code></pre>
-<table class=" lightable-classic" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
-<thead>
-<tr>
-<th style="text-align:left;">
-population_effect_size
-</th>
-<th style="text-align:right;">
-proportion_of_significant_p_values
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-Cohen’s d = 0
-</td>
-<td style="text-align:right;">
-0.05
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Cohen’s d = 0.5
-</td>
-<td style="text-align:right;">
-0.70
-</td>
-</tr>
-</tbody>
-</table>
-<pre class="r"><code># plot results
+# plot results
 ggplot(simulation_summary, aes(population_effect_size, proportion_of_significant_p_values)) +
   geom_col() +
   theme_linedraw() +
   scale_y_continuous(breaks = breaks_pretty(n = 10),
+                     labels = label_percent(),
                      limits = c(0,1),
                      name = &quot;Proportion of significant p-values&quot;) +
   scale_x_discrete(name = &quot;Population effect size&quot;)</code></pre>

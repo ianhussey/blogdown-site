@@ -72,7 +72,7 @@ generate_data <- function(n_per_condition,
 
 ```
 
-# Define analsyis function
+# Define analysis function
 
 Apply an independent Student's t-test to the data and extract the *p*-value as a column in a tibble. 
 
@@ -136,7 +136,7 @@ simulation <- experiment_parameters |>
 
 # Run results across iterations
 
-Unnest the nested data in the results column and then, for each of the experiment conditions, summarize the proportion of significant *p*-values iterations. Print a table and plot of the results.
+Unnest the nested data in the results column and then, for each of the experiment conditions, summarize the proportion of significant *p*-values iterations. Print a plot of the results.
 
 ```{r}
 
@@ -150,17 +150,12 @@ simulation_summary <- simulation |>
   mutate(significant = p < .05) |>
   summarize(proportion_of_significant_p_values = mean(significant))
 
-# table of results
-simulation_summary |>
-  mutate_if(is.numeric, janitor::round_half_up, digits = 2) |>
-  kable() |>
-  kable_classic(full_width = FALSE)
-
 # plot results
 ggplot(simulation_summary, aes(population_effect_size, proportion_of_significant_p_values)) +
   geom_col() +
   theme_linedraw() +
   scale_y_continuous(breaks = breaks_pretty(n = 10),
+                     labels = label_percent(),
                      limits = c(0,1),
                      name = "Proportion of significant p-values") +
   scale_x_discrete(name = "Population effect size")
