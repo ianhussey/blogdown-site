@@ -1,0 +1,176 @@
+---
+title: "Tidy Monte Carlo simulations"
+author: "Ian Hussey"
+date: 2025-04-27
+output:
+  html_document:
+    code_download: true
+    code_folding: show
+    highlight: haddock
+    theme: flatly
+    toc: yes
+    toc_float: yes
+categories: ["R"]
+tags: ["Monte Carlo simulation", "tidy"]
+---
+
+<script src="{{< blogdown/postref >}}index_files/kePrint/kePrint.js"></script>
+<link href="{{< blogdown/postref >}}index_files/lightable/lightable.css" rel="stylesheet" />
+
+
+<p>Simulation studies are extremely useful for understanding how statistical methods work, what happens when you violate their assumptions, for calculating statistical power, for understanding the consequences of p-hacking, and many other things. However, they can also be somewhat inaccessible or have a steep learning curve. In order to make them more accessible for people already familiar with {tidyverse} packages such as {dplyr} and {tidyr} and the concept of Tidy Data, I spent some time constructing a general workflow for simulations within a tidy workflow using {purrr}.</p>
+<p>This workflow maximizes transparency of the steps by retaining all generated data sets and results. It also maximises code reusability by separating the key steps of simulating (define experiment conditions, generate data, analyse data, iterate, summarise across iterations) into separate functions and code blocks. This post illustrates a simple example of this workflow to calculate the false positive rate and false negative rate (power) of a Student’s t-test for a given population effect size. Of course, this is easier to calculate in G*power, but it provides a simple example of the workflow, which can be used for much more complex things.</p>
+<div id="dependencies" class="section level1">
+<h1>Dependencies</h1>
+<pre class="r"><code>library(tidyr)
+library(dplyr)
+library(purrr) 
+library(janitor)
+library(ggplot2)
+library(scales)
+library(knitr)
+library(kableExtra)</code></pre>
+</div>
+<div id="define-data-generation-function" class="section level1">
+<h1>Define data generation function</h1>
+<p>Generate two datasets sampled from a normally distributed population, with equal SDs and custom N per group and population means (<span class="math inline">\(\mu\)</span>).</p>
+<pre class="r"><code># functions for simulation
+generate_data &lt;- function(n_per_condition,
+                          mean_control,
+                          mean_intervention,
+                          sd) {
+  
+  data_control &lt;- 
+    tibble(condition = &quot;control&quot;,
+           score = rnorm(n = n_per_condition, mean = mean_control, sd = sd))
+  
+  data_intervention &lt;- 
+    tibble(condition = &quot;intervention&quot;,
+           score = rnorm(n = n_per_condition, mean = mean_intervention, sd = sd))
+  
+  data_combined &lt;- bind_rows(data_control,
+                             data_intervention)
+  
+  return(data_combined)
+}</code></pre>
+</div>
+<div id="define-analsyis-function" class="section level1">
+<h1>Define analsyis function</h1>
+<p>Apply an independent Student’s t-test to the data and extract the <em>p</em>-value as a column in a tibble.</p>
+<pre class="r"><code>analyze &lt;- function(data) {
+
+  res_t_test &lt;- t.test(formula = score ~ condition, 
+                       data = data,
+                       var.equal = TRUE,
+                       alternative = &quot;two.sided&quot;)
+  
+  res &lt;- tibble(p = res_t_test$p.value)
+  
+  return(res)
+}</code></pre>
+</div>
+<div id="define-experiment-conditions" class="section level1">
+<h1>Define experiment conditions</h1>
+<p>Use <code>expand_grid()</code> to create a tibble of all combinations of all each level of each variable, plus an arbitary number of iterations for the simulation.</p>
+<pre class="r"><code># simulation parameters
+experiment_parameters &lt;- expand_grid(
+  n_per_condition = 50,
+  mean_control = 0,
+  mean_intervention = c(0, 0.5),
+  sd = 1,
+  iteration = 1:10000 
+) |&gt;
+  # because mean_control is 0 and both SDs are 1, mean_intervention is a proxy for Cohen&#39;s d.
+  # because d = [mean_intervention - mean_control]/SD_pooled
+  # for clarity, let&#39;s just make a variable called population_effect_size
+  mutate(population_effect_size = paste0(&quot;Cohen&#39;s d = &quot;, mean_intervention)) </code></pre>
+</div>
+<div id="run-simulation" class="section level1">
+<h1>Run simulation</h1>
+<p>Use {purrr}’s parallel map function (<code>pmap()</code>) to map the data generation and analysis functions onto the experiment parameters. This saves the (tidy) output of each function as a nested data column.</p>
+<pre class="r"><code># set seed
+set.seed(42)
+
+# run simulation
+simulation &lt;- experiment_parameters |&gt;
+  mutate(generated_data = pmap(list(n_per_condition = n_per_condition, 
+                                    mean_control = mean_control,
+                                    mean_intervention = mean_intervention,
+                                    sd = sd),
+                               generate_data)) |&gt;
+  mutate(results = pmap(list(generated_data),
+                        analyze))</code></pre>
+</div>
+<div id="run-results-across-iterations" class="section level1">
+<h1>Run results across iterations</h1>
+<p>Unnest the nested data in the results column and then, for each of the experiment conditions, summarize the proportion of significant <em>p</em>-values iterations. Print a table and plot of the results.</p>
+<pre class="r"><code># summarize across iterations
+simulation_summary &lt;- simulation |&gt;
+  # unnest results
+  unnest(results) |&gt;
+  # for each level of mean_intervention... 
+  group_by(population_effect_size) |&gt;
+  # ... calculate proportion of iterations where significant results were found
+  mutate(significant = p &lt; .05) |&gt;
+  summarize(proportion_of_significant_p_values = mean(significant))
+
+# table of results
+simulation_summary |&gt;
+  mutate_if(is.numeric, janitor::round_half_up, digits = 2) |&gt;
+  kable() |&gt;
+  kable_classic(full_width = FALSE)</code></pre>
+<table class=" lightable-classic" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+population_effect_size
+</th>
+<th style="text-align:right;">
+proportion_of_significant_p_values
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Cohen’s d = 0
+</td>
+<td style="text-align:right;">
+0.05
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cohen’s d = 0.5
+</td>
+<td style="text-align:right;">
+0.70
+</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code># plot results
+ggplot(simulation_summary, aes(population_effect_size, proportion_of_significant_p_values)) +
+  geom_col() +
+  theme_linedraw() +
+  scale_y_continuous(breaks = breaks_pretty(n = 10),
+                     limits = c(0,1),
+                     name = &quot;Proportion of significant p-values&quot;) +
+  scale_x_discrete(name = &quot;Population effect size&quot;)</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<ul>
+<li>When population effect size is zero, the false positive rate is 5%, as it should be given that a) all assumptions of the test were met by the data generating process and b) the number of iterations was sufficiently high.</li>
+<li>When population effect size is Cohen’s d = 0.5 and N = 50 per group, statistical power (1-false negative rate) c.70% when all assumptions of the test were met by the data generating process.</li>
+</ul>
+</div>
+<div id="masters-course-based-on-this-workflow" class="section level1">
+<h1>Masters course based on this workflow</h1>
+<p>Building on this general workflow, I teach a Masters-level course “Improving your statistical inferences through simulation studies in R” at the University of Bern in Spring semester. <a href="https://github.com/ianhussey/simulation-course">Materials for the course are freely available</a> under an Open Source license (CC-BY 4.0).</p>
+</div>
+<div id="resources" class="section level1">
+<h1>Resources</h1>
+<ul>
+<li>Pustejovsky &amp; Miratrix, 2023, Designing Monte Carlo Simulations in R. <a href="https://jepusto.github.io/Designing-Simulations-in-R/">https://jepusto.github.io/Designing-Simulations-in-R/</a></li>
+<li>Siepe et al. (2024) Simulation Studies for Methodological Research in Psychology: A Standardized Template for Planning, Preregistration, and Reporting. Psychological Methods. <a href="https://doi.org/10.1037/met0000695">https://doi.org/10.1037/met0000695</a></li>
+</ul>
+</div>
