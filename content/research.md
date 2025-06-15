@@ -20,6 +20,8 @@ ERЯOR: A bug-bounty program for science
 - https://error.reviews
 - Elson, M. (2024). A Bug Bounty Program for Science. Nature, 629, 730. https://doi.org/10.1038/d41586-024-01465-y
 
+
+
 ### 1.2. Forensic meta-science method and tool development 
 
 #### "Forensic Meta-Science in Psychology" Slack group
@@ -44,6 +46,8 @@ I run the Slack group "Forensic Meta-Science in Psychology", which is one of sev
 
 - https://errors.shinyapps.io/PORT
 
+
+
 ### 1.3. Instances of forensic meta-science
 
 #### Critiques of original research articles
@@ -62,6 +66,8 @@ I run the Slack group "Forensic Meta-Science in Psychology", which is one of sev
 
 - You can search my pubeer comments here, although note that not all returned artices are true-positive hits for comments I have left: https://pubpeer.com/search?q=ian+hussey 
 
+
+
 ## 2. Meta-science of measurement
 
 ### 2.1. Psychology: the science of behavior?
@@ -69,6 +75,8 @@ I run the Slack group "Forensic Meta-Science in Psychology", which is one of sev
 Psychology's self-image is that we are the science of behavior, but Baumeister et al. (2007) argued that we collect measurements of actual behavior with increasing rarity, undermining this self-image. This project defines different modes of measurement in psychology and examines trends over time. Stage 1 Registered Report under review at PCI: Registered Reports
 
 - Norwood, S. F., Elson, M., & Hussey, I. (2025, under review). Psychology: The science of behavior? https://osf.io/ykw4s/
+
+
 
 ### 2.2. Evidence of wide-scale schmeasurement and fragmentation
 
@@ -78,19 +86,27 @@ Psychology's self-image is that we are the science of behavior, but Baumeister e
 - Elson, M., Hussey, I., Alsalti, T., & Arslan, R. C. (2023). Psychological Measures Aren’t Toothbrushes. Communications Psychology. https://doi.org/10.1038/s44271-023-00026-9
 - Hussey, I. & Hughes, S. (2020). Hidden invalidity among 15 commonly used measures in Social and Personality psychology. Advances in Methods and Practices in Psychological Science. https://doi.org/10.1177/2515245919882903
 
+
+
 ### 2.3. Instances of schmeasurement
 
 #### Measurement flexiblity in the Iowa Gambling Task: A meta-methods study
 
 Aka "the Iowa Gambling task is actually dozens of different tasks in a trenchcoat". Project nearly ready for pre-printing.
 
+
+
 #### Item-content overlap analyses
 
 Fried's (2016) compared the overlap in the symptoms measured by common depression scales. Some of my current students run item-content overlap studies in other domains, including suicidal ideation and Alcohol Use Disorder.  
 
+
+
 #### The Implicit Association Test has poor individual-level utility
 
 - Cummins, J. & Hussey, I. (2025, under review). The individual-level precision of implicit measures. https://osf.io/preprints/psyarxiv/fj6rm/
+
+
 
 #### The Implicit Relational Assessment Procedure is a poor measure
 
@@ -107,17 +123,23 @@ Fried's (2016) compared the overlap in the symptoms measured by common depressio
 - Hussey, I. (2023). The Implicit Relational Assessment Procedure’s trial-types are not independent.
   https://osf.io/preprints/psyarxiv/4gsxq
 
+
+
 #### The Affect Misattribution Procedure is a poor measure 
 
 - Hughes, S., Cummins, J., & Hussey, I. (2023). Effects on the Affect Misattribution Procedure are Strongly Moderated by Awareness. Behavior Research Methods, 1(29). https://doi.org/10.3758/s13428-022-01879-4
 - Hussey, I., & Cummins, J. (2022). Evidence against effects on the Affect Misattribution Procedure being
   unaware: AMP effects involve construct-irrelevant individual differences. https://psyarxiv.com/8k94v
 
+
+
 ## 3. Open Science, replications, etc.
 
 ### 3.1. Data sharing
 
 - Hussey, I. (2024, accepted). Data is not available upon request. Meta-Psychology. https://psyarxiv.com/jbu9r 
+
+
 
 ### 3.2. Replications
 
@@ -127,11 +149,15 @@ Fried's (2016) compared the overlap in the symptoms measured by common depressio
 - Kurdi, B., Hussey, I., Stahl, C., Hughes, S, Unkelbach, C., Ferguson, N, ... (2022). Unaware attitude formation in the surveillance task? Revisiting the findings of Moran et al.(2021). International Review of Social Psychology, 35(1). https://doi.org/10.5334/irsp.546
 - Moran, T., Hughes, S., Hussey, I., Vadillo, M. A. Olson, M. A., Aust, F., Bading, K., Balas, R., Benedict, T., Corneille, O., Douglas, S. B., Ferguson, M. J., Fritzlen, K. A., Gast, A., Gawronski, B., Heycke, T., Högden, F., Hütter, M., Kurdi, B., Mierop, A., Richter, J., Sarzyńska, J., Smith, C. T., Stahl, C., Thomasius, P., Unkelbach, C., & De Houwer, J. (2021). Incidental Attitude Formation via the Surveillance Task: A Pre-Registered Replication of Olson and Fazio (2001). Psychological Science, 32(1). https://doi.org/10.1177/09567976209685
 
+
+
 ### 3.3. Sample sizes and power
 
 - Hussey, I. (2023). A systematic review of Null Hypothesis Significance Testing, sample sizes and statistical power in research using the Implicit Relational Assessment Procedure. Journal of Contextual Behavioral Science, 29, 86-97. https://doi.org/10.1016/j.jcbs.2023.06.008
 
+
+
 ### 3.4. p-hacking
 
-- Replication of Stefan & Schonbrödt's 'A compendium of *p*-hacking strategies' (in progress) 
-- Hussey, I. (2021). A method to streamline *p*-hacking. Meta Psychology, 5. https://doi.org/10.15626/MP.2020.2529
+- Replication of Stefan & Schonbrödt's 'A compendium of p-hacking strategies' (in progress) 
+- Hussey, I. (2021). A method to streamline p-hacking. Meta Psychology, 5. https://doi.org/10.15626/MP.2020.2529
