@@ -9,16 +9,18 @@ My research interests focus on three inter-related topics related to Open Scienc
 
 The below list both recent publications and current projects in various stages of development. Prospective students or postdocs should be aware that this page may not always be up to date, but should nontheless be useful to determining a fit between our interests. 
 
-## Forensic meta-science
 
-### Error detection
+
+## 1. Forensic meta-science
+
+### 1.1. Error detection
 
 ERЯOR: A bug-bounty program for science
 
 - https://error.reviews
 - Elson, M. (2024). A Bug Bounty Program for Science. Nature, 629, 730. https://doi.org/10.1038/d41586-024-01465-y
 
-### Forensic meta-science method and tool development 
+### 1.2. Forensic meta-science method and tool development 
 
 #### "Forensic Meta-Science in Psychology" Slack group
 
@@ -42,33 +44,33 @@ I run the Slack group "Forensic Meta-Science in Psychology", which is one of sev
 
 - https://errors.shinyapps.io/PORT
 
-### Instances of forensic meta-science
+### 1.3. Instances of forensic meta-science
 
-### Critiques of original research articles
+#### Critiques of original research articles
 
 - Zemestani & Mozaffari (2020, retracted) Acceptance and commitment therapy for the treatment of depression in persons with physical disability: a randomized controlled trial. 
   - Pubpeer comment: https://pubpeer.com/publications/0E13E34679B18385D6C4C29143A9CD 
   - Retraction notice: https://journals.sagepub.com/doi/10.1177/0269215520923135
 - Hussey, I. (2020). General claims require generalized effects: A reply to Ruiz et al.’s (2020) ‘A systematic and critical response to Pendrous et al. (2020) replication study’. https://psyarxiv.com/83z2y
 
-### Critiques of meta-analyses
+#### Critiques of meta-analyses
 
 - Hussey, I. (2025). Verification report: A critical reanalysis of Vahey et al. (2015) “A meta-analysis of criterion effects for the Implicit Relational Assessment Procedure (IRAP) in the clinical domain”. *Behavior Therapy* *and Experimental Psychiatry.* https://doi.org/10.1016/j.jbtep.2024.102015
 - Alsalti, T., Hussey, I., Elson, M., Krause, R., & Pohl, S. (2025, under review). A Methodological Evaluation of Meta-Analyses in tDCS-Motor Learning Research. https://doi.org/10.1101/2024.07.26.24311068
 
-### Pubpeer comments
+#### Pubpeer comments
 
 - You can search my pubeer comments here, although note that not all returned artices are true-positive hits for comments I have left: https://pubpeer.com/search?q=ian+hussey 
 
-## Meta-science of measurement
+## 2. Meta-science of measurement
 
-### Psychology: the science of behavior?
+### 2.1. Psychology: the science of behavior?
 
 Psychology's self-image is that we are the science of behavior, but Baumeister et al. (2007) argued that we collect measurements of actual behavior with increasing rarity, undermining this self-image. This project defines different modes of measurement in psychology and examines trends over time. Stage 1 Registered Report under review at PCI: Registered Reports
 
 - Norwood, S. F., Elson, M., & **Hussey, I.** (2025, under review). Psychology: The science of behavior? https://osf.io/ykw4s/
 
-### Evidence of wide-scale schmeasurement and fragmentation
+### 2.2. Evidence of wide-scale schmeasurement and fragmentation
 
 - Anvari, F., Alsalti, T., Oehler, L., Hussey, I., Elson, M., Arslan. R.C. (2025). A fragmented field: Construct and measure proliferation in psychology. *Advances in Methods and Practices in Psychological Science.* https://osf.io/preprints/psyarxiv/b4muj
 - Anvari, F., Alsalti, T., Oehler, L., Hussey, I., Elson, M., Arslan. R.C. (2025). Defragmenting psychology. *Nature Human Behaviour.* https://doi.org/10.1038/s41562-025-02138-0 
@@ -76,7 +78,7 @@ Psychology's self-image is that we are the science of behavior, but Baumeister e
 - Elson, M., Hussey, I., Alsalti, T., & Arslan, R. C. (2023). Psychological Measures Aren’t Toothbrushes. *Communications Psychology*. https://doi.org/10.1038/s44271-023-00026-9
 - Hussey, I. & Hughes, S. (2020). Hidden invalidity among 15 commonly used measures in Social and Personality psychology. *Advances in Methods and Practices in Psychological Science.* https://doi.org/10.1177/2515245919882903
 
-### Instances of schmeasurement
+### 2.3. Instances of schmeasurement
 
 #### Measurement flexiblity in the Iowa Gambling Task: A meta-methods study
 
@@ -111,13 +113,13 @@ Fried's (2016) compared the overlap in the symptoms measured by common depressio
 - Hussey, I., & Cummins, J. (2022). Evidence against effects on the Affect Misattribution Procedure being
   unaware: AMP effects involve construct-irrelevant individual differences. https://psyarxiv.com/8k94v
 
-## Open Science, replications, etc.
+## 3. Open Science, replications, etc.
 
-### Data sharing
+### 3.1. Data sharing
 
 - Hussey, I. (2024, accepted). Data is not available upon request. *Meta-Psychology.* https://psyarxiv.com/jbu9r 
 
-### Replications
+### 3.2. Replications
 
 - Deming (Adam) Wang, Kai Qin Chan, Wakefield Morys-Carter, … Hussey, I., … & Martin Hagger. (2025, Stage 1 Accepted Registered Report). Multilab direct replication of: Wegner & Erber (1992) ‘The hyperaccessibility of suppressed thoughts’ and Wegner et al. (1987) ‘Paradoxical effects of thought suppression’. *Advances in Methods and Practices in Psychological Science.* 
   - Data collection complete, manuscript in preparation
@@ -125,11 +127,11 @@ Fried's (2016) compared the overlap in the symptoms measured by common depressio
 - Kurdi, B., Hussey, I., Stahl, C., Hughes, S, Unkelbach, C., Ferguson, N, ... (2022). Unaware attitude formation in the surveillance task? Revisiting the findings of Moran et al.(2021). *International Review of Social* *Psychology, 35*(1). https://doi.org/10.5334/irsp.546
 - Moran, T., Hughes, S., Hussey, I., Vadillo, M. A. Olson, M. A., Aust, F., Bading, K., Balas, R., Benedict, T., Corneille, O., Douglas, S. B., Ferguson, M. J., Fritzlen, K. A., Gast, A., Gawronski, B., Heycke, T., Högden, F., Hütter, M., Kurdi, B., Mierop, A., Richter, J., Sarzyńska, J., Smith, C. T., Stahl, C., Thomasius, P., Unkelbach, C., & De Houwer, J. (2021). Incidental Attitude Formation via the Surveillance Task: A Pre-Registered Replication of Olson and Fazio (2001). *Psychological Science, 32*(1)*.* https://doi.org/10.1177/09567976209685
 
-### Sample sizes and power
+### 3.3. Sample sizes and power
 
 - Hussey, I. (2023). A systematic review of Null Hypothesis Significance Testing, sample sizes and statistical power in research using the Implicit Relational Assessment Procedure. *Journal of Contextual Behavioral Science*, *29*, 86-97. https://doi.org/10.1016/j.jcbs.2023.06.008
 
-### p-hacking
+### 3.4. p-hacking
 
 - Replication of Stefan & Schonbrödt's 'A compendium of *p*-hacking strategies' (in progress) 
 - Hussey, I. (2021). A method to streamline *p*-hacking. *Meta Psychology, 5.* https://doi.org/10.15626/MP.2020.2529
