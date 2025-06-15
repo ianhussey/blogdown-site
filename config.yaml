@@ -86,6 +86,12 @@ menu:
     - identifier: about
       name: About
       url: about/
+    - identifier: research
+      name: Research
+      url: research/
+    - identifier: teaching
+      name: Teaching
+      url: teaching/
     - identifier: posts
       name: Posts
       url: posts/
