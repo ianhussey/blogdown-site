@@ -7,7 +7,7 @@ title: Research
 
 My research interests focus on three inter-related topics related to Open Science and Meta-Science: forensic meta-science, the meta-science of measurement, and more general Open Science topics such as replications and Questionable Research Practices.
 
-The below list both recent publications and current projects in various stages of development. Prospective students or postdocs should be aware that this page may not always be up to date, but should nontheless be useful to determining a fit between our interests. 
+The below lists both recent publications and current projects in various stages of development. Prospective students or postdocs should be aware that this page may not always be up to date, but should nontheless be useful to determining a fit between our interests. 
 
 
 
