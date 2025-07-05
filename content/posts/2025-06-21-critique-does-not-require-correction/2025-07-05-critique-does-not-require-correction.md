@@ -20,7 +20,7 @@ Scientific self-correction is already a painfully slow and flawed process. Other
 
 I think that third-parties (e.g., editors, reviewers, spectators on social media) who request that critiques come with fixes are usually well-intentioned. They are correct that the ideal critique would solve the issue raised. But there are at least four systemic problems with this requirement. Of course, when it is the original authors themselves who insist that I solve their issue before critiquing them, their motivations for taking this stance are often more clear-cut.
 
-![no critique, only cite 3 panel](no critique, only cite 3 panel.png)
+![no critique, only cite 3 panel](no_critique_only_cite_3_panel.png)
 
 First, this requirement shifts the burden of proof from the original authors to critics, creating a perverse incentive for flaws to be as complex and difficult to solve as possible. The more difficult my issues are to solve, the less others are permitted to point out that they exist in the first place. *“π = 3, and you may not point out I am wrong unless you can tell me the correct answer.”* Insisting that public identification of flaws must come with fixes slows and disincentivizes critique. 
 
