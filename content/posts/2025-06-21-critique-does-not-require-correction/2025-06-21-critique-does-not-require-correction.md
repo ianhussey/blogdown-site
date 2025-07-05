@@ -14,8 +14,6 @@ However, in practice, the demands for constructive criticism in science go much 
 
 While often well-intentioned, this requirement gets in the way of scientific self-correction. My position is that identifying serious flaws in scientific work is itself a contribution and should not be contingent on fixing the original work.
 
-I have written several critiques of published articles and measures.[1–6] 
-
 I have written several critiques of published articles and measures.[<a href="#ref1">1</a>–<a href="#ref6">6</a>] Without fail, every one of them has been met with responses along the lines of “a serious critique would provide a better answer to the question.” I can see where these folk are coming from, but I totally disagree, and I want to explain why. I’m quite sure that others have made all these points before, but in the absence of a specific source I can point to when I encounter this point, I thought I would assemble my thoughts here. 
 
 Scientific self-correction is already a painfully slow and flawed process. Others have noted that critique is often held to a much higher bar than original work, that the incentive structures in academia reward doing flawed original work more than correcting existing flawed claims.[<a href="#ref7">7</a>, <a href="#ref8">8</a>] For science to be self-correcting – an adage that we like to repeat but rarely operationalize[<a href="#ref9">9</a>] – it should be possible to rapidly disseminate critique. Requiring that those who identify serious flaws must also provide solutions serves to slow or disincentivize critique. 
