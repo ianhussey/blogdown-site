@@ -2,7 +2,7 @@
 layout: single
 title: "π = 3: Pointing out flaws does not require solving them"
 sitemap: true
-date: 2025-06-21
+date: 2025-07-05
 ---
 
 I think science often takes the requirement that criticism be constructive too far. Most definitions of constructive criticism refer to feedback that is intended to help by pointing out flaws in a way that is specific, actionable, and respectful. This is good, I’m in favor of it. 
