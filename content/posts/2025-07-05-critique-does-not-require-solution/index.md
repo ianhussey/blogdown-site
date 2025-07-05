@@ -58,4 +58,4 @@ Many thanks to Jamie Cummins and Ruben Arslan for their feedback on drafts of th
 <p id="ref9">[9] Vazire, S. & Holcombe, A. O. Where Are the Self-Correcting Mechanisms in Science? <em>Review of General Psychology</em> <strong>26</strong>, 212–223 (2022).</p>  
 <p id="ref10">[10] Brandolini, A. The bullshit asymmetry: the amount of energy needed to refute bullshit is an order of magnitude bigger than to produce it. <em>Twitter</em> https://x.com/ziobrando/status/289635060758507521 (2013).</p>  
 <p id="ref11">[11] Alexander, S. <em>Beware Isolated Demands For Rigor</em>. Slate Star Codex. https://slatestarcodex.com/2014/08/14/beware-isolated-demands-for-rigor/ (2014).</p>
-<p id="ref12">[11] Hilgard, J. Crystal Prison Zone: I tried to report scientific misconduct. How did it go? <em>Crystal Prison Zone</em> https://crystalprisonzone.blogspot.com/2021/01/i-tried-to-report-scientific-misconduct.html (2021).</p>
+<p id="ref12">[12] Hilgard, J. Crystal Prison Zone: I tried to report scientific misconduct. How did it go? <em>Crystal Prison Zone</em> https://crystalprisonzone.blogspot.com/2021/01/i-tried-to-report-scientific-misconduct.html (2021).</p>
