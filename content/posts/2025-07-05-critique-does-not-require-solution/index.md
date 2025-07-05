@@ -47,15 +47,17 @@ Many thanks to Jamie Cummins and Ruben Arslan for their feedback on drafts of th
 
 ## References
 
-<p id="ref1">[1] Hussey, I. The Implicit Relational Assessment Procedure is not suitable for individual use. <em>PsyArXiv</em> (2020) doi:10.31234/osf.io/w2ygr.</p>  
-<p id="ref2">[2] Hussey, I. Reply to Barnes-Holmes & Harte (2022) “The IRAP as a Measure of Implicit Cognition: A Case of Frankenstein’s Monster”. <em>PsyArXiv</em> (2022) doi:10.31234/osf.io/qmg6s.</p>  
-<p id="ref3">[3] Hussey, I. Verification report: A critical reanalysis of Vahey et al. (2015) “A meta-analysis of criterion effects for the Implicit Relational Assessment Procedure (IRAP) in the clinical domain”. <em>Journal of Behavior Therapy and Experimental Psychiatry</em> 102015 (2025) doi:10.1016/j.jbtep.2024.102015.</p>  
-<p id="ref4">[4] Hussey, I. & Drake, C. E. The Implicit Relational Assessment Procedure demonstrates poor internal consistency and test-retest reliability: A meta-analysis. <em>PsyArXiv</em> (2020) doi:10.31234/osf.io/ge3k7.</p>  
-<p id="ref5">[5] Hussey, I. & Elson, M. Verification Report of Zhao et al. (2023) ‘Effect of Acceptance and Commitment Therapy for depressive disorders: a meta-analysis’. Preprint at https://doi.org/10.31234/osf.io/84e7t_v1 (2025).</p>  
-<p id="ref6">[6] Zemestani, M. & Mozaffari, S. RETRACTED:  Acceptance and commitment therapy for the treatment of depression in persons with physical disability: a randomized controlled trial. <em>Clin Rehabil</em> <strong>34</strong>, 938–947 (2020).</p>  
-<p id="ref7">[7] Bakker, M., van Dijk, A. & Wicherts, J. M. The rules of the game called psychological science. <em>Perspectives on Psychological Science</em> <strong>7</strong>, 543–554 (2012).</p>  
-<p id="ref8">[8] Smaldino, P. E. & McElreath, R. The natural selection of bad science. <em>Royal Society Open Science</em> <strong>3</strong>, 160384 (2016).</p>  
-<p id="ref9">[9] Vazire, S. & Holcombe, A. O. Where Are the Self-Correcting Mechanisms in Science? <em>Review of General Psychology</em> <strong>26</strong>, 212–223 (2022).</p>  
+<p id="ref1">[1] Hussey, I. The Implicit Relational Assessment Procedure is not suitable for individual use. <em>PsyArXiv</em> (2020) https://doi.org/10.31234/osf.io/w2yg</p>  
+<p id="ref2">[2] Hussey, I. Reply to Barnes-Holmes & Harte (2022) “The IRAP as a Measure of Implicit Cognition: A Case of Frankenstein’s Monster”. <em>PsyArXiv</em> (2022) https://doi.org/10.31234/osf.io/qmg6s</p>  
+<p id="ref3">[3] Hussey, I. Verification report: A critical reanalysis of Vahey et al. (2015) “A meta-analysis of criterion effects for the Implicit Relational Assessment Procedure (IRAP) in the clinical domain”. <em>Journal of Behavior Therapy and Experimental Psychiatry</em> 102015 (2025) https://doi.org/10.1016/j.jbtep.2024.102015</p>  
+<p id="ref4">[4] Hussey, I. & Drake, C. E. The Implicit Relational Assessment Procedure demonstrates poor internal consistency and test-retest reliability: A meta-analysis. <em>PsyArXiv</em> (2020) https://doi.org/10.31234/osf.io/ge3k</p>  
+<p id="ref5">[5] Hussey, I. & Elson, M. Verification Report of Zhao et al. (2023) ‘Effect of Acceptance and Commitment Therapy for depressive disorders: a meta-analysis’. Version 1. <em>Lifecycle journal</em>https://doi.org/10.71240/lcyc.052239 (2025).</p>  
+<p id="ref6">[6] Zemestani, M. & Mozaffari, S. RETRACTED:  Acceptance and commitment therapy for the treatment of depression in persons with physical disability: a randomized controlled trial. <em>Clin Rehabil 34</em>, 938–947 (2020) https://doi.org/10.1177/0269215520923135.</p>  
+<p id="ref7">[7] Bakker, M., van Dijk, A. & Wicherts, J. M. The rules of the game called psychological science. <em>Perspectives on Psychological Science</em> <strong>7</strong>, 543–554 (2012). https://doi.org/10.1177/1745691612459060</p>  
+<p id="ref8">[8] Smaldino, P. E. & McElreath, R. The natural selection of bad science. <em>Royal Society Open Science, 3</em>, 160384 (2016). https://doi.org/10.1098/rsos.160384</p>  
+<p id="ref9">[9] Vazire, S. & Holcombe, A. O. Where Are the Self-Correcting Mechanisms in Science? <em>Review of General Psychology 26</em>, 212–223 (2022). https://doi.org/10.1177/10892680211033912</p>  
 <p id="ref10">[10] Brandolini, A. The bullshit asymmetry: the amount of energy needed to refute bullshit is an order of magnitude bigger than to produce it. <em>Twitter</em> https://x.com/ziobrando/status/289635060758507521 (2013).</p>  
 <p id="ref11">[11] Alexander, S. <em>Beware Isolated Demands For Rigor</em>. Slate Star Codex. https://slatestarcodex.com/2014/08/14/beware-isolated-demands-for-rigor/ (2014).</p>
 <p id="ref12">[12] Hilgard, J. Crystal Prison Zone: I tried to report scientific misconduct. How did it go? <em>Crystal Prison Zone</em> https://crystalprisonzone.blogspot.com/2021/01/i-tried-to-report-scientific-misconduct.html (2021).</p>
+
+
