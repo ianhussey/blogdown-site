@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "π = 3: Pointing out flaws does not require solving them"
-slug: "critique-does-not-require-solution"
+url: "/posts/2025/07/critique-does-not-require-solution"
 sitemap: true
 date: 2025-07-05
 ---
