@@ -28,7 +28,7 @@ First, this requirement shifts the burden of proof from the original authors to 
 
 Second, identifying flaws in scientific work is an uphill struggle against Brandolini’s Law[<a href="#ref10">10</a>]: the idea that it takes much more effort to identify and correct issues than to make them. If we want science to be self-correcting, we need to make it harder to assert incorrect claims in the first place and generally easier to critique claims. 
 
-This point is closely related to an asymmetry in the demands for rigour we place on critique versus praise. This is a more general point that extends well beyond requiring solutions to point out flaws: imagine if we required people to verify a result before they ever praise or cite it. “No citation without verification” would likely be considered unworkable or too high a bar. And yet it is exactly the rule that we apply to critique. 
+This point is closely related to an asymmetry in the demands for rigour we place on critique versus praise.[<a href="#ref11">11</a>] This is a more general point that extends well beyond requiring solutions to point out flaws: imagine if we required people to verify a result before they ever praise or cite it. “No citation without verification” would likely be considered unworkable or too high a bar. And yet it is exactly the rule that we apply to critique. 
 
 Third, this requirement ignores opportunity costs. In the extra time that it takes to create a solution before vocalizing any public critique, the demonstrably flawed original work often continues to be cited and used. Effective correction is rapid. To draw a parallel with the maxim “justice delayed is justice denied,” delayed scientific correction is weak and less effective.
 
@@ -38,15 +38,13 @@ Loosely speaking, it must be allowable in some scientific contexts to reply to t
 
 This usually raises the question: can such replies come off as rude? Yes, sometimes, to some people. Am I advocating that we abandon civility or constructive criticism? Of course not. Be professional and human. I am saying that we currently collectively adhere to the rule that “merely” pointing out serious flaws is currently often proscribed or forbidden, despite the clear scientific utility of doing so. The extremity of this implicit rule needs to be recognized: academia, the industry whose main purpose is truth discovery, is surprisingly uncomfortable with people pointing out things that are not true.
 
-This proposal, that we permit people to point out problems without also requiring them to fix them, is much less radical once you have been on the receiving end of them as a critic. For example, I have pointed out that certain meta-analyses contain objective errors that seriously undermine their conclusions.[3,5] This work took serious amounts of time and effort – sometimes years – and yet I am routinely told that, to be publishable, my critique should also conduct a new systematic review and meta-analysis from scratch that answers the original authors’ questions. Elsewhere, I have committed time and effort to point out that a given measurement instrument is unreliable,[1,4] but was routinely told that I should produce and validate a better measure. As with much pushback against critique and post-publication peer review in science, I encourage folk to try it themselves and experience how frustrating the process can be. Direct experience of these perverse incentives generally makes you more sympathetic to such efforts (e.g., experiences such as Joe Hilgard’s[<a href="#ref11">11</a>]).
+This proposal, that we permit people to point out problems without also requiring them to fix them, is much less radical once you have been on the receiving end of them as a critic. For example, I have pointed out that certain meta-analyses contain objective errors that seriously undermine their conclusions.[3,5] This work took serious amounts of time and effort – sometimes years – and yet I am routinely told that, to be publishable, my critique should also conduct a new systematic review and meta-analysis from scratch that answers the original authors’ questions. Elsewhere, I have committed time and effort to point out that a given measurement instrument is unreliable,[1,4] but was routinely told that I should produce and validate a better measure. As with much pushback against critique and post-publication peer review in science, I encourage folk to try it themselves and experience how frustrating the process can be. Direct experience of these perverse incentives generally makes you more sympathetic to such efforts (e.g., experiences such as Joe Hilgard’s[<a href="#ref12">12</a>]).
 
 For science to be self-correcting, pointing out flaws does not also require simultaneously solving them. It is important to be able to state that π does not equal 3.
 
 ## Acknowledgements
 
 Many thanks to Jamie Cummins and Ruben Arslan for their feedback on drafts of this post.
-
-## References
 
 ## References
 
@@ -60,4 +58,5 @@ Many thanks to Jamie Cummins and Ruben Arslan for their feedback on drafts of th
 <p id="ref8">[8] Smaldino, P. E. & McElreath, R. The natural selection of bad science. <em>Royal Society Open Science</em> <strong>3</strong>, 160384 (2016).</p>  
 <p id="ref9">[9] Vazire, S. & Holcombe, A. O. Where Are the Self-Correcting Mechanisms in Science? <em>Review of General Psychology</em> <strong>26</strong>, 212–223 (2022).</p>  
 <p id="ref10">[10] Brandolini, A. The bullshit asymmetry: the amount of energy needed to refute bullshit is an order of magnitude bigger than to produce it. <em>Twitter</em> https://x.com/ziobrando/status/289635060758507521 (2013).</p>  
-<p id="ref11">[11] Hilgard, J. Crystal Prison Zone: I tried to report scientific misconduct. How did it go? <em>Crystal Prison Zone</em> https://crystalprisonzone.blogspot.com/2021/01/i-tried-to-report-scientific-misconduct.html (2021).</p>
+<p id="ref11">[11] Alexander, S. <em>Beware Isolated Demands For Rigor</em>. Slate Star Codex. https://slatestarcodex.com/2014/08/14/beware-isolated-demands-for-rigor/ (2014).</p>
+<p id="ref12">[11] Hilgard, J. Crystal Prison Zone: I tried to report scientific misconduct. How did it go? <em>Crystal Prison Zone</em> https://crystalprisonzone.blogspot.com/2021/01/i-tried-to-report-scientific-misconduct.html (2021).</p>
