@@ -1,6 +1,7 @@
 ---
 layout: single
 title: "π = 3: Pointing out flaws does not require solving them"
+slug: "flaws-and-solutions"
 sitemap: true
 date: 2025-07-05
 ---
