@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "IRAPreserach.org website relaunched"
+title: "IRAPresearch.org website relaunched"
 sitemap: true
 date: 2025-04-27
 ---
