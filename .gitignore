@@ -12,3 +12,4 @@ Thumbs.db
 *.hugo_build.lock
 .hugo_build.lock
 .Rproj.user
+/content/posts old
