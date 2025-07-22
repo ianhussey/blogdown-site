@@ -29,7 +29,7 @@ Hussey & Barnes-Holmes (2012) The Implicit Relational Assessment Procedure as a 
 
 **Details**
 
-This work was conducted for my bachelors thesis project in 2009. It's *p*-hacked to death, although that word didn't even exist until 2010 and I probably didn't learn it until 2012 or really appreciate its meaning until 2015 or so. Pick your poison, they're all in there: optional stopping, flexibility in scoring, median split of a continuous variable, mulch-way interaction effects. 
+This work was conducted for my bachelors thesis project in 2009. It's *p*-hacked to death, although that word didn't even exist until 2010 and I probably didn't learn it until 2012 or really appreciate its meaning until 2015 or so. Pick your poison, they're all in there: optional stopping, flexibility in scoring, median split of a continuous variable, multi-way interaction effects. 
 
 My recollection is that I successfully computationally reproduced the reported results from the final data set around 2015, when I first started learning R. The original analyses were conducted in statview, a statistics package not even sold since 1997, but which somehow refused to die in that research group, continuing to see until at least 2015. Unfortunately, I don't have the files for this any more to know for sure. The point is moot given that the reported analyses are just one of many, many forking paths. 
 
