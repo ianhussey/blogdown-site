@@ -86,3 +86,7 @@ Some time after publication, I obtained the data for the studies I wasn't direcl
 Beyond the results presented, the claims in article relate to what the authors call the STTDE effect, and therefore contributed to the [Gish Gallop](https://en.wikipedia.org/wiki/Gish_gallop) present in a lot of the Relational Frame Theory literature whereby new acronyms for theories and concepts are created with much more enthusiasm that they are ever tested, including AARR, BIRR/EERR, REC, DAARE, STDDE, MDML, HDML, and so forth. That broader theoretical car crash is beyond the scope of this post, and likely better to [satirize](https://bsky.app/profile/ianhussey.mmmdata.io/post/3lrfiourvvc2y) than directly critique given the claims are [Not Even Wrong](https://en.wikipedia.org/wiki/Not_even_wrong): 
 
 ![](shitpost.jpg)
+
+## Acknowlegements
+
+Thank you to Sabrina Norwood and Jamie Cummins for their comments on previous drafts of this post.
