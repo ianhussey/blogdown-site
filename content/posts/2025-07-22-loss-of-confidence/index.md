@@ -62,7 +62,7 @@ O’Regan, Farina, Hussey, & Roche (2015) Event-related brain potentials reveal 
 
 **Details**
 
-This work was conducted very early in my PhD using a small grant we obtained for between-research-group collaborations. It is Lego Science: I had a behavioral task 'block' (the IRAP) and they had a neuro 'block' (EEG), neither of us deeply understood the other's, but we clicked the blocks together to build a publishable unit. It's not so much that I have lost confidence in it, rather I'm not sure I ever really had it. Not for any deep concern, just a general sense of bewilderment. 
+This work was conducted very early in my PhD using a small grant we obtained for between-research-group collaborations. It is Lego Science: I had a behavioral task 'block' (derived relational responding via Matching to Sample task) and they had a neuro 'block' (EEG), neither of us deeply understood the other's, but we clicked the blocks together to build a publishable unit. It's not so much that I have lost confidence in it, rather I'm not sure I ever really had it. Not for any deep concern, just a general sense of bewilderment. 
 
 <br>
 
