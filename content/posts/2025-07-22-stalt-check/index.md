@@ -62,13 +62,15 @@ This further reinforces the need for validation of STALT against other forensic 
 
 When I asked him for comments on this post, Heathers suggested that some manual inspection of a small subset of *p*-values in some of these bins would be useful. For example, what sort of tests, comparisons, domains etc. generate extremely low *p*-values; are they based on data extraction errors, etc. I think these are all all great suggestions, which I unfortunate don't currently have time to examine. Just as the original STALT manuscript briefly defined the method and gave examples, this blog post tries to briefly raise some questions about distributions from a large data set. If any one reading this is interested in taking up this task, please do get in touch and I can provide you with the data set you'd need to do more processing or inspection.
 
+[TJ Mahr pointed out on bluesky](https://bsky.app/profile/tjmahr.com/post/3lukyk2ey6c2z) that the underflow issue can be avoided by working with log10 *p*-values. I used this approach in a previous draft of this post, but I felt I was going beyond what STALT proposed, or trying to propose a better way of doing it without first illustrating my issue with the existing one. If anyone runs with this further, his code for doing so is also in my github below.
+
 ## Code 
 
 All code and processed data is available at https://github.com/ianhussey/staltcheck. 
 
 ## Acknowledgements
 
-Thank to James Heathers for his comments on a draft of this post. 
+Thank to James Heathers for his comments on a draft of this post and TJ Mahr for useful feedback on bluesky.
 
 ## References
 
