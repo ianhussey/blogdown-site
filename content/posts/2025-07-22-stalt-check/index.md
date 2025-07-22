@@ -8,7 +8,7 @@ date: 2025-07-22
 
 [Heathers and Meyerowitz-Katz (2024)](https://osf.io/6hste) recently proposed smaller-than-a-lowest-threshold (STALT) checks as a method to assess the credibility and trustworthiness of published articles. The simple idea here is that *p*-values are often reported to be smaller than a given threshold, e.g., "*p* < .001", but how much smaller? Their proposal is that if the reported test statistic or degrees of freedom are untrustworthy, the *p*-value may be incredibly and implausibly small. This is closely related to the idea that massive effect sizes (e.g., Cohen's *d* above say 2 or 5, depending on the context) are implausible, given that the effect size's confidence intervals and the *p*-values are re-expressions of one another. 
 
-Heathers is the OG producer of forensic meta-science methods like GRIM, SPRITE, umbrella plots, and others, so when he has a new idea it's worth paying attention. 
+Along with Nick Brown, Heathers is the OG producer of forensic meta-science methods like GRIM, SPRITE, umbrella plots, and others, so when he has a new idea it's worth paying attention. 
 
 My first question was: how small is too small? Trustworthy *p*-values should be right skewed and small. Plus, given that almost all stats software tends to truncate *p*-values, and we in psychology reflexively avoid scientific notation such as "$p < 10^{-9}$" like the plague because of our math phobia, I don't have a good intuition for how small untruncated trustworthy *p*-values tend to be. For this post, we'll have to temporarily overcome this phobia for scientific notation, because numbers with hundreds of digits are terrible on the eye.
 
