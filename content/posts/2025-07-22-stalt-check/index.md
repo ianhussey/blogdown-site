@@ -58,9 +58,17 @@ For researchers interested in using STALT, it's important to clarify what the in
 
 This further reinforces the need for validation of STALT against other forensic meta-science methods before we know its utility. STALT may be easier to calculate than other metrics, but at present it remains considerably more difficult to interpret.
 
+## Future directions
+
+When I asked him for comments on this post, Heathers suggested that some manual inspection of a small subset of *p*-values in some of these bins would be useful. For example, what sort of tests, comparisons, domains etc. generate extremely low *p*-values; are they based on data extraction errors, etc. I think these are all all great suggestions, which I unfortunate don't currently have time to examine. Just as the original STALT manuscript briefly defined the method and gave examples, this blog post tries to briefly raise some questions about distributions from a large data set. If any one reading this is interested in taking up this task, please do get in touch and I can provide you with the data set you'd need to do more processing or inspection.
+
 ## Code 
 
 All code and processed data is available at https://github.com/ianhussey/staltcheck. 
+
+## Acknowledgements
+
+Thank to James Heathers for his comments on a draft of this post. 
 
 ## References
 
