@@ -3,7 +3,7 @@ layout: single
 title: "STALT-check: How small a *p*-value is suspicious?"
 url: "/posts/2025/07/stalt-check"
 sitemap: true
-date: 2025-07-05
+date: 2025-07-22
 ---
 
 [Heathers and Meyerowitz-Katz (2024)](https://osf.io/6hste) recently proposed smaller-than-a-lowest-threshold (STALT) checks a method to assess the credibility and trustworthiness of published articles. The simple idea here is that *p*-values are often reported to be smaller than a given threshold, e.g., "*p* < .001", but how much smaller? Their proposal is that if the reported test statistic or degrees of freedom are untrustworthy, the *p*-value may be incredibly and implausibly small. This is closely related to the idea that massive effect sizes (e.g., Cohen's *d* above say 2 or 5, depending on the context) are implausible, given that the effect size's confidence intervals and the *p*-values are re-expressions of one another. 

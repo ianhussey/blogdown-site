@@ -36,6 +36,7 @@ taxonomies:
   series: series
   tag: tags
 params:
+  math = true
   googleAnalytics: "G-V56JQ8QJJD"
   customCSS: []
   customJS: []
