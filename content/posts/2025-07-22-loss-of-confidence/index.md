@@ -17,7 +17,7 @@ Over the years, I've often considered posting a Loss of Confidence statement lik
 
 ### Hussey & Barnes-Holmes (2012) 
 
-Hussey & Barnes-Holmes (2012) The Implicit Relational Assessment Procedure as a measure of implicit depression and the role of psychological flexibility. *Cognitive and Behavioral Practice. https://doi.org/10.1016/j.cbpra.2012.03.002 
+Hussey & Barnes-Holmes (2012) The Implicit Relational Assessment Procedure as a measure of implicit depression and the role of psychological flexibility. *Cognitive and Behavioral Practice*. https://doi.org/10.1016/j.cbpra.2012.03.002 
 
 **Summary**
 
@@ -51,7 +51,7 @@ The current norms of science are such that it is practically unheard of to self-
 
 ### O’Regan, Farina, Hussey, & Roche (2015) 
 
-O’Regan, Farina, Hussey, & Roche (2015) Event-related brain potentials reveal correlates of the transformation of stimulus functions through derived relations in healthy humans. Brain Research. https://doi.org/10.1016/j.brainres.2014.12.044
+O’Regan, Farina, Hussey, & Roche (2015) Event-related brain potentials reveal correlates of the transformation of stimulus functions through derived relations in healthy humans. *Brain Research*. https://doi.org/10.1016/j.brainres.2014.12.044
 
 **Summary**
 
@@ -68,7 +68,7 @@ This work was conducted very early in my PhD using a small grant we obtained for
 
 ### Finn, Barnes-Holmes, Hussey, & Graddy (2017) 
 
-Finn, Barnes-Holmes, Hussey, & Graddy (2017) Exploring the behavioral dynamics of the implicit relational assessment procedure: The impact of three types of introductory rules
+Finn, Barnes-Holmes, Hussey, & Graddy (2017) Exploring the behavioral dynamics of the implicit relational assessment procedure: The impact of three types of introductory rules. *The Psychological Record*.
 
 **Summary**
 
