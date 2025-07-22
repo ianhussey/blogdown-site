@@ -66,6 +66,10 @@ This work was conducted very early in my PhD using a small grant we obtained for
 
 <br>
 
+![](lego_science.png)
+
+<br>
+
 ### Finn, Barnes-Holmes, Hussey, & Graddy (2017) 
 
 Finn, Barnes-Holmes, Hussey, & Graddy (2017) Exploring the behavioral dynamics of the implicit relational assessment procedure: The impact of three types of introductory rules. *The Psychological Record*.
