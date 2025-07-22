@@ -87,6 +87,6 @@ Beyond the results presented, the claims in article relate to what the authors c
 
 ![](shitpost.jpg)
 
-## Acknowlegements
+## Acknowledgements
 
 Thank you to Sabrina Norwood and Jamie Cummins for their comments on previous drafts of this post.
