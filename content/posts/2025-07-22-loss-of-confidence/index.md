@@ -1,8 +1,7 @@
 ---
 title: "Loss of Confidence statement"
 layout: single
-date: "2025-07-23"
-output: word_document
+date: "2025-07-22"
 sitemap: true
 ---
 
@@ -10,7 +9,7 @@ Around 2017, Christopher Chabris, Tal Yarkoni, Julia Rohrer and others conducted
 
 I saw it at the time when they were recruiting co-authors, but one of the requirements was that participants had to take full responsibility for the work they had lost confidence in (in order to avoid finger pointing at other coauthors of the original work, etc.). The work I had already lost confidence in at the time was conducted for my bachelors thesis, and I felt at the time that I would unfairly take full responsibility for analytic decisions that my supervisor instructed me to take. In retrospect, this was splitting hairs, and I regret not being braver, getting involved in the project and being radically transparent. 
 
-Over the years, I've often considered posting a loss of confidence statement like this. The more (forensic) meta-science work I do, the more important it feels to be transparent about what of my work I (currently) am confident in or not. I recently wrote a separate piece on [my recent and current research interests](https://mmmdata.io/research/). This reignited thoughts about a loss of confidence statement, which is effectively the other side of the coin: the publications which I would encourage prospective students and colleagues not to read. So, here it is.
+Over the years, I've often considered posting a Loss of Confidence statement like this. The more (forensic) meta-science work I do, the more important it feels to be transparent about what of my work I (currently) am confident in or not. I recently wrote a separate piece on [my recent and current research interests](https://mmmdata.io/research/). This reignited thoughts about a Loss of Confidence statement, which is effectively the other side of the coin: the publications which I would encourage prospective students and colleagues not to read. So, here it is.
 
 **tl;dr: As with much of the psychology literature, disregard a lot of the empirical work from before about 2015.**
 
@@ -40,7 +39,7 @@ My recollection is that I successfully computationally reproduced the reported r
 
 <br>
 
-I've subsequently written lots (e.g., see [this post](https://mmmdata.io/posts/2025/04/irapresearch.org-website-relaunched/)) on my more general loss of confidence in the validity of the IRAP, the measure used in the study. 
+I've subsequently written lots (e.g., see [this post](https://mmmdata.io/posts/2025/04/irapresearch.org-website-relaunched/)) on my more general Loss of Confidence in the validity of the IRAP, the measure used in the study. 
 
 More importantly, I'm aware of at least one unpublished independent conceptual replication of the study that failed to replicate the group differences or interaction. 
 
