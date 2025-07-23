@@ -386,9 +386,9 @@ on page 6 (edited for formatting of scientific notation):</p>
 <p>“This raises an interesting question – what lower bound should be
 considered suspicious? <span class="math inline">\(p = 10^{-9}\)</span>
 is beyond unlikely, but does it have a material difference to <span class="math inline">\(p = 10^{-3}\)</span>? Only imperfect heuristics
-exist to determine this, and several can be employed. Specifically: a.
-Equivalent comparisons from real world examples of large p-values b.
-Equivalent comparisons from related papers in the same field c. The
+exist to determine this, and several can be employed. Specifically: (a)
+Equivalent comparisons from real world examples of large p-values; (b)
+Equivalent comparisons from related papers in the same field; (c) The
 above, but for effect sizes With the above in mind, the existing
 literature can be canvassed for comparative figures. While there is no
 direct statistical correspondence between effect size and p-value, it is
@@ -427,16 +427,15 @@ very small numbers, are weird (e.g., <a href="https://blog.djnavarro.net/posts/2
 <p><br></p>
 <p>Inspection of the plot suggests that <span class="math inline">\(p =
 10^{-9}\)</span> is not “beyond unlikely”, its actually the bin with the
-largest number of observations. Of course, these bins are very coarse;
-within this bin, <em>p</em>-values with zero to three leading zeros
-almost certainly more common than smaller ones, despite this not being
-visible from this plot. But in the grand scheme of things, those with 9
-are not especially unusual or rare. This may (or may not) have
+largest number of observations. In the grand scheme of things, those
+with 9 are not especially unusual or rare. This may (or may not) have
 implications for whether these values are therefore untrustworthy.</p>
 <p>This becomes even more apparent when we calculate percentiles and
 find the number of leading zeros that defines round number percentiles
 (i.e., where 90%, 95%, 97.5%, 99%, 99.5%, and 99.9% of implied
-<em>p</em>-values have no more than this number of leading zeros).</p>
+<em>p</em>-values have no more than this number of leading zeros). This
+also allows us more insights than the coarseness of the first bin [<span class="math inline">\(10^{-0}, 10^{-10}\)</span>] in the plot allows
+for.</p>
 <table>
 <thead>
 <tr class="header">
@@ -446,6 +445,30 @@ find the number of leading zeros that defines round number percentiles
 </tr>
 </thead>
 <tbody>
+<tr class="odd">
+<td align="right">0</td>
+<td align="right">24.3</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">52.4</td>
+</tr>
+<tr class="odd">
+<td align="right">2</td>
+<td align="right">68.1</td>
+</tr>
+<tr class="even">
+<td align="right">3</td>
+<td align="right">76.2</td>
+</tr>
+<tr class="odd">
+<td align="right">4</td>
+<td align="right">81.0</td>
+</tr>
+<tr class="even">
+<td align="right">5</td>
+<td align="right">84.3</td>
+</tr>
 <tr class="odd">
 <td align="right">9</td>
 <td align="right">90.8</td>
@@ -473,9 +496,29 @@ find the number of leading zeros that defines round number percentiles
 </tbody>
 </table>
 <p><br><br></p>
-<p>From the table, 90.8% of implied <em>p</em>-values are larger than
-<span class="math inline">\(10^{-9}\)</span>. Or, conversely, about one
-in ten implied <em>p</em>-values are smaller than this again.</p>
+<p>From the table, 76.2% of implied <em>p</em>-values have between zero
+and three zeros immediately after the decimal place (i.e., “<em>p</em>s
+&gt; .0001”). Therefore three quarters of implied <em>p</em>-values
+would not be truncated by the APA reporting rule of reporting
+<em>p</em>-values smaller than .0001 as “<em>p</em> &lt; .0001”. We can
+break this down further as the differences between the rows:</p>
+<ul>
+<li>c.24% of implied <em>p</em>-values have no zero immediately after
+the decimal place (e.g., “<em>p</em> = .38”)</li>
+<li>c.28% have one such zero (e.g., “<em>p</em> = .02”)</li>
+<li>c.16% have two (e.g., “<em>p</em> = .001”)</li>
+<li>c.8% have three (e.g., “<em>p</em> = .0008”)</li>
+</ul>
+<p>The distribution of the remaining quarter of implied
+<em>p</em>-values are more alien to most of us, because they are usually
+hidden being that “&lt;”.</p>
+<p>Of recalculated/implied <em>p</em>-values:</p>
+<ul>
+<li>c.10% are <span class="math inline">\(\le 10^{-9}\)</span></li>
+<li>c.5% are <span class="math inline">\(\le 10^{-17}\)</span></li>
+<li>1% are <span class="math inline">\(\le 10^{-66}\)</span></li>
+<li>.1% are <span class="math inline">\(\le 10^{-223}\)</span></li>
+</ul>
 <p>Of course, this is purely descriptive: it tells us what size
 <em>p</em>-values are implied by the reported test statistics and
 degrees of freedom in the literature. It doesn’t tell us what proportion
@@ -483,14 +526,10 @@ of those (implied) <em>p</em>-values are themselves trustworthy or not.
 This would require more in-depth inspection of the individual articles,
 which is beyond the scope of this post. Perhaps some or even many of the
 small <em>p</em>-values in the literature are untrustworthy. Either
-STALT issues are extremely prevalent, or perhaps <em>p</em> = <span class="math inline">\(10^{-9}\)</span> is not small enough to consider
-suspicious.</p>
-<p>One option would be to use a more extreme threshold, perhaps based on
-the frequency with which they are observed in the literature. From the
-table above, implied <span class="math inline">\(p \le 10^{-17}\)</span>
-are in the top 5% of smallest values. To get to the top 1%, <span class="math inline">\(p \le 10^{-66}\)</span> is needed. The top .1%
-requires <span class="math inline">\(p \le 10^{-223}\)</span>.</p>
-<p>Of course, it could be plausible that STALT issues are extremely
+STALT issues are extremely prevalent, or perhaps values such as
+<em>p</em> = <span class="math inline">\(10^{-9}\)</span> are not small
+enough to consider suspicious.</p>
+<p>Also, it could be plausible that STALT issues are extremely
 prevalent. After all, roughly half of examined psychology articles
 (36/71) have GRIM inconsistencies (Brown &amp; Heathers, 2017), and
 roughly half of psychology articles have statcheck errors (Nuijten et
@@ -550,8 +589,9 @@ further, his code for doing so is also in my github below.</p>
 </div>
 <div id="acknowledgements" class="section level2">
 <h2>Acknowledgements</h2>
-<p>Thank to James Heathers for his comments on a draft of this post and
-TJ Mahr for useful feedback on bluesky.</p>
+<p>Thank to James Heathers and Malte Elson for their comments on earlier
+versions of this post and TJ Mahr for his useful feedback on
+bluesky.</p>
 </div>
 <div id="references" class="section level2">
 <h2>References</h2>
