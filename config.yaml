@@ -37,7 +37,6 @@ taxonomies:
   tag: tags
 params:
   math: true
-  googleAnalytics: "G-V56JQ8QJJD"
   customCSS: []
   customJS: []
   dateform: Jan 2, 2006
