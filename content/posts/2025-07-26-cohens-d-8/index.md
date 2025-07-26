@@ -5,7 +5,7 @@ date: "2025-07-26"
 sitemap: true
 ---
 
-I've spent a lot of time thinking about the plausibility of standardized effect sizes in the last year. From a trustworthiness assessment perspective, (standardized) effect sizes have a great combination of being commonly reported, easy to look into, having values that are range in their plausibility, and - when they go wrong - being at least somewhat diagnostic of other things having also gone wrong. 
+I've spent a lot of time thinking about the plausibility of standardized effect sizes in the last year. From a trustworthiness assessment perspective, (standardized) effect sizes have a great combination of being commonly reported, easy to look into, having values that range in their plausibility, and - when they go wrong - being at least somewhat diagnostic of other things having also gone wrong. 
 
 They are in the top left corner which makes them Cool and Good. For these reasons, they are useful to include in our critical thinking when reading any article or, more formally, as part of a Trustworthiness Assessment (e.g., using [Wilkinson et al.'s (2025) INSPECT-SR](https://www.medrxiv.org/content/10.1101/2024.11.25.24316905v3) tool).
 
@@ -65,7 +65,7 @@ What sort of things produce Cohen's *d* values of 4 or 5 and are plausible?
 
 - "Chocolates are more desirable than human poop": Cohen's *d* = 4.52 (Balcetis & Dunning, 2009).
 - "Eating pretzels makes you thirstier than drinking water does": Cohen's d = 4.69 (Balcetis & Dunning, 2009).
-- Children tend to state that "boys tend to wear skirts more often than girls tend to wear skirts" (Streck & Kessels, 2024, unpublished poster presentation).
+- Children tend to state that "girls tend to wear skirts more often than boys do" (Streck & Kessels, 2024, unpublished poster presentation).
 
 Although, as a quick aside, I have questions about even these effects, and am slowly working to replicate them and other some maximal positive control studies like this (see also [Hilgard, 2021](https://doi.org/10.1016/j.jesp.2020.104082)).
 
