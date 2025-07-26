@@ -97,7 +97,7 @@ On the other hand, when trying to convince readers of the utility of looking int
 
 In the case of Isasi et al. (2010), Gloster et al. (2020) appear to have made the "Standard Error error" here of confusing Standard Deviation and Standard Error, which inflates effect size. See various examples, commentary and study of this by [Maassen et al., 2020](https://doi.org/10.1371/journal.pone.0233107); tweets by [Charlton, 2022](https://x.com/AaronCharlton/status/1478927020528750594), statistical notes by [Altman & Bland, 2005](https://doi.org/10.1136/bmj.331.7521.903), and others. In the case of Moore and Blackwell (1997), it's unclear how Gloster et al. (2020) reached Cohen'd *d* = 1.65 as the original article reports *d* = -0.08.
 
-### Visualising Cohen's *d* generated from Likert data to build intuitions
+### Visualizing Cohen's *d* from Likert data to build intuitions
 
 When faced with a very large Cohen's *d* - not only when reading a study or meta-analysis but also when conducting one - it can be useful to think about the necessary implications of such an effect size. There are excellent Cohen's d visualization tools out there already (e.g., Kristoffer Magnusson's: https://rpsychologist.com/cohend/), but many of them assume the underlying data is continuous. Psychologists and other social scientists very often deal with Likert data made up of bounded integers, that is, sum scores from self-report scales where individuals' data are whole number with a logical minimum and maximum. I created a simply Shiny app  to manually construct and visualize Cohen's *d* from such bounded integer data: https://errors.shinyapps.io/cohens-d-from-frequencies/
 
