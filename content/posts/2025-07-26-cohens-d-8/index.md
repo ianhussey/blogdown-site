@@ -25,15 +25,13 @@ On the other hand, literally no-one is proposing that effect sizes beyond a spec
 
 One useful starting point is to have an intuition for norms in the literature. Bogdan (2025)](https://doi.org/10.1177/25152459251323480) scraped data from 173,926 psychology articles published between 2004 and 2024 and extracted p values and effect size metrics. His article is worth a read. Further analysis of that data set can tell us lots about the distribution of Cohen's *d* effect sizes in the psychology literature as a whole. 
 
-I extracted 23,089 Cohen's *d* effect sizes that were explicitly reported in text (e.g., "Cohen's *d* = 0.21"). It can also be estimated from *t*-tests' degrees of freedom and *t* values, akin to how statcheck also recomputes *p*-values from these ([Nuijten et al., 2016](10.3758/s13428-015-0664-2)). For the sake of simplicity, let's assume all t-tests are independent rather than dependent, as the Cohen's *d* calculation differs slightly between them although it doesn't change the distribution very much.
+I extracted 23,089 Cohen's *d* effect sizes that were explicitly reported in text (e.g., "Cohen's *d* = 0.21"). It can also be estimated from *t*-tests' degrees of freedom and *t* values, akin to how statcheck also recomputes *p*-values from these ([Nuijten et al., 2016](10.3758/s13428-015-0664-2)). For the sake of simplicity, let's assume all t-tests are independent rather than dependent, as the Cohen's *d* calculation differs slightly between them although it doesn't change the distribution very much. The right tail of these distributions is very long, so I only plot the 0-99th percentiles. 
 
 <br>
 
 ![](bogdan_cohens_d.png)
 
 <br>
-
-The right tail of these distributions is very long, so I take only the 0-99th percentiles. 
 
 Or in percentiles:
 
@@ -61,7 +59,7 @@ My emerging personal rule of thumb is that Cohen's *d* > 2 are often questionabl
 
 This isn't to say that very large Cohen's *d* values of 5 or so can't occur; they can but they require a combination of very little variance within conditions and very large differences between conditions (i.e., the definition of Cohen's *d*). 
 
-### Where you might see Cohen's *d* > 4 or 5
+### Where you might see Cohen's *d*  > 4 or 5
 
 What sort of things produce Cohen's *d* values of 4 or 5 and are plausible? 
 
@@ -71,7 +69,7 @@ What sort of things produce Cohen's *d* values of 4 or 5 and are plausible?
 
 Although, as a quick aside, I have questions about even these effects, and am slowly working to replicate them and other some maximal positive control studies like this (see also [Hilgard, 2021](https://doi.org/10.1016/j.jesp.2020.104082)).
 
-### Where you should probably not see Cohen's *d* > 4 or 5
+### Where you should probably not see Cohen's *d*  > 4 or 5
 
 Conversely, there are contexts where we can say that it is relatively unlikely that we should observe very large Cohen's *d* values, such as Cohen's *d* = 8.0. One example would be RCTs on psychotherapy, given that we have lots and lots of information about effect sizes in that area (e.g., [Cuijpers et al., 2024](https://doi.org/10.1002/wps.21203)). Perhaps especially in clients who did not respond to prior treatments because, who may be more treatment resistant (although, for an excellent statistical critique of this common clinical assumption see [Senn, 2004](https://doi.org/10.1136/bmj.329.7472.966)). Perhaps especially at one-year follow up, given that demonstrating sustained improvement is always challenging.  
 
