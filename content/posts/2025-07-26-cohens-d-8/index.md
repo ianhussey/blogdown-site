@@ -59,7 +59,7 @@ My emerging personal rule of thumb is that Cohen's *d* > 2 are often questionabl
 
 This isn't to say that very large Cohen's *d* values of 5 or so can't occur; they can but they require a combination of very little variance within conditions and very large differences between conditions (i.e., the definition of Cohen's *d*). 
 
-### Where you might see Cohen's $d$ > 4 or 5
+### Where you might see Cohen's d > 4 or 5
 
 What sort of things produce Cohen's *d* values of 4 or 5 and are plausible? 
 
@@ -69,7 +69,7 @@ What sort of things produce Cohen's *d* values of 4 or 5 and are plausible?
 
 Although, as a quick aside, I have questions about even these effects, and am slowly working to replicate them and other some maximal positive control studies like this (see also [Hilgard, 2021](https://doi.org/10.1016/j.jesp.2020.104082)).
 
-### Where you should probably not see Cohen's $d$ > 4 or 5
+### Where you should probably not see Cohen's d > 4 or 5
 
 Conversely, there are contexts where we can say that it is relatively unlikely that we should observe very large Cohen's *d* values, such as Cohen's *d* = 8.0. One example would be RCTs on psychotherapy, given that we have lots and lots of information about effect sizes in that area (e.g., [Cuijpers et al., 2024](https://doi.org/10.1002/wps.21203)). Perhaps especially in clients who did not respond to prior treatments because, who may be more treatment resistant (although, for an excellent statistical critique of this common clinical assumption see [Senn, 2004](https://doi.org/10.1136/bmj.329.7472.966)). Perhaps especially at one-year follow up, given that demonstrating sustained improvement is always challenging.  
 
@@ -97,7 +97,7 @@ On the other hand, when trying to convince readers of the utility of looking int
 
 In the case of Isasi et al. (2010), Gloster et al. (2020) appear to have made the "Standard Error error" here of confusing Standard Deviation and Standard Error, which inflates effect size. See various examples, commentary and study of this by [Maassen et al., 2020](https://doi.org/10.1371/journal.pone.0233107); tweets by [Charlton, 2022](https://x.com/AaronCharlton/status/1478927020528750594), statistical notes by [Altman & Bland, 2005](https://doi.org/10.1136/bmj.331.7521.903), and others. In the case of Moore and Blackwell (1997), it's unclear how Gloster et al. (2020) reached Cohen'd *d* = 1.65 as the original article reports *d* = -0.08.
 
-### Visualizing Cohen's $d$ from Likert data to build intuitions
+### Visualizing Cohen's d from Likert data to build intuitions
 
 When faced with a very large Cohen's *d* - not only when reading a study or meta-analysis but also when conducting one - it can be useful to think about the necessary implications of such an effect size. There are excellent Cohen's d visualization tools out there already (e.g., Kristoffer Magnusson's: [rpsychologist.com/cohend](https://rpsychologist.com/cohend)), but many of them assume the underlying data is continuous. Psychologists and other social scientists very often deal with Likert data made up of bounded integers, that is, sum scores from self-report scales where individuals' data are whole number with a logical minimum and maximum. I created a simply Shiny app  to manually construct and visualize Cohen's *d* from such bounded integer data: [errors.shinyapps.io/cohens-d-from-frequencies](https://errors.shinyapps.io/cohens-d-from-frequencies/).
 
