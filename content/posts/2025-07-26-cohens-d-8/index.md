@@ -112,7 +112,11 @@ This can be used to interrogate the estimate for Isasi et al. (2010) presented i
 
 Collectively, there is very good reason to doubt the veracity of the very large effect sizes reported in Gloster et al. (2020). Inspecting and verifying these concerns in detail like in the above can take some time, but merely observing Cohen's d = 8, 5, or perhaps even 2 in the context of a psychotherapy RCT can provide a useful starting point that signals the need for further scrutiny. Of course, ideally, these issues should be caught during the process of conducting a meta-analysis rather than years later when the article has already been cited a lot (65 times on Google Scholar at time of writing). 
 
-We can also use this app to visualize extreme effect sizes on Likert scale. [Britz et al.'s (2023)](https://doi.org/10.3758/s13428-022-01921-5) study on the valence of traits is useful here as they report not only means and SDs but also the frequencies of each response on the 7-point scale and, unlike other studies providing norms for word valences they had a large number of ratings per word (*N* > 200). Of the 500 attributes they assessed, the most positive one ('loving') and the most negative one ('racist') have not only extreme means but, necessarily, small *SD*s due to the bounding of the scale. *SD*s are almost never zero in samples that are not extremely small, because even on topics most of us agree on there will be the occasional person who says that 'racist' is in fact a positive attribute, as happened here. This combination of large differences in means and small *SD*s produces a very large Cohen's *d* value: *d* = 7.97, 95% CI [7.39, 8.54]. The point to appreciate here is that, on a single-item 7-point scale, it extremely difficult to produce well-estimated Cohen's *d* values that are larger than this. 
+We can also use the Shiny app to visualize extreme effect sizes on more common Likert scales, such as 1-7 scales. [Britz et al.'s (2023)](https://doi.org/10.3758/s13428-022-01921-5) study on the valence of traits is useful here as they report not only means and *SD*s but also the frequencies of each response on the 7-point scale. And, unlike other studies providing norms for word valences, they collected a large number of ratings per word (*N* > 200). 
+
+Of the 500 attributes they assessed, the most positive attribute ('loving') and the most negative one ('racist') have not only extreme means but, necessarily, small *SD*s due to the bounding of the scale. *SD*s are almost never zero in samples that are not extremely small, because even on topics most of us agree on there will be the occasional person who says, for example, that 'racist' is in fact a positive attribute, as happened ub their data. 
+
+This combination of large differences in means and small *SD*s produces a very large Cohen's *d* value: *d* = 7.97, 95% CI [7.39, 8.54]. The point to appreciate here is that, on a single-item 7-point scale, it extremely difficult to produce well-estimated Cohen's *d* values that are larger than this. 
 
 <br>
 
@@ -120,7 +124,7 @@ We can also use this app to visualize extreme effect sizes on Likert scale. [Bri
 
 <br>
 
-Another useful demonstration from Britz et al.'s (2023) data is another pair of attributes that are not only extreme in their means and *SD*s but also antonyms: 'honest' and 'dishonest'. Even for words that are extremely valenced opposites, Cohen's *d* does not exceed 8: *d* = 7.76, 95% CI [7.19, 8.32]. 
+Another useful demonstration from Britz et al.'s (2023) data is a pair of attributes that are not only extreme in their means and *SD*s but are also simple antonyms: 'honest' vs. 'dishonest'. Even for words that are extremely valenced opposites, Cohen's *d* does not exceed 8: *d* = 7.76, 95% CI [7.19, 8.32]. 
 
 <br>
 
@@ -128,10 +132,12 @@ Another useful demonstration from Britz et al.'s (2023) data is another pair of 
 
 <br>
 
-Of course, there is no perfect one-to-one comparison between this and the Cohen's *d* of 8 reported in Gloster et al. (2020). Multi-item scales can produce smaller *SD*s and therefore larger Cohen's *d* values, and scales with wider ranges can produce larger differences in means. To a degree - but very unlikely enough to produce a legitimate effect size of Cohen's *d* = 8.0 in an RCT on psychotherapy vs control. 
+Of course, there is no perfect one-to-one comparison between this comparison and the Cohen's *d* of 8 reported in Gloster et al. (2020). Multi-item scales can produce smaller *SD*s and therefore larger Cohen's *d* values, and scales with wider ranges can produce larger differences in means. Larger to a degree - but very unlikely enough to produce a legitimate effect size of Cohen's *d* = 8.0 in an RCT on psychotherapy vs. control. 
 
-While acknowledging the nuances of the comparisons of different scale ranges etc., effects like the above are a useful intuition pump. When encountering similarly large effect sizes in the literature, as yourself questions like: 
+While acknowledging the nuances of the comparisons of different scale ranges etc., effects like the above are a useful intuition pump. When encountering similarly large effect sizes in the literature, ask yourself questions like: 
 
-> "Is this psychotherapy really more effective compared to control than people think loving people are nicer than racists (Cohen's *d* = 7.76), or more effective than the degree to which people find chocolate more desirable than poop (Cohen's *d* = 4.52)?"
+> "Is this psychotherapy really more effective compared to control than people think loving people are nicer than racists?" (Cohen's *d* = 7.76) 
+>
+> Or more effective than the degree to which people find chocolate more desirable than poop? (Cohen's *d* = 4.52)"
 
 You can read more about the specifics of the issues I have raised about Gloster et al. (2020) in [this pubpeer comment](https://pubpeer.com/publications/B894E24B78C656FA21941142971CDE) or [this preprint (Hussey, 2025)](https://osf.io/preprints/psyarxiv/rbydj). More examples of extreme yet credible effect sizes in psychology can be found in [this](https://github.com/ianhussey/effect-size-distributions-and-extreme-examples) GitHub repository. 
