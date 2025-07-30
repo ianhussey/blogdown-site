@@ -25,7 +25,7 @@ On the other hand, literally no-one is proposing that effect sizes beyond a spec
 
 One useful starting point is to have an intuition for norms in the literature. [Bogdan (2025)](https://doi.org/10.1177/25152459251323480) scraped data from 173,926 psychology articles published between 2004 and 2024 and extracted p values and effect size metrics. His article is worth a read. Further analysis of that data set can tell us lots about the distribution of Cohen's *d* effect sizes in the psychology literature as a whole. 
 
-I extracted 23,089 Cohen's *d* effect sizes that were explicitly reported in text (e.g., "Cohen's *d* = 0.21"). Cohen's *d* can also be estimated from *t*-tests' degrees of freedom and *t* values, akin to how statcheck also recomputes *p*-values from these ([Nuijten et al., 2016](https://doi.org/10.3758/s13428-015-0664-2)). For the sake of simplicity, I assumed all *t*-tests are independent rather than dependent, as the Cohen's *d* calculation differs slightly between them, although it doesn't change the distribution very much. 454,687 Cohen's $d_s$ estimates could be calcualted from reported *t*-tests. The right tail of both distributions are very long, so I only plot the 0-99th percentiles. 
+I extracted 23,089 Cohen's *d* effect sizes that were explicitly reported in text (e.g., "Cohen's *d* = 0.21"). Cohen's *d* can also be estimated from *t*-tests' degrees of freedom and *t* values, akin to how statcheck also recomputes *p*-values from these ([Nuijten et al., 2016](https://doi.org/10.3758/s13428-015-0664-2)). For the sake of simplicity, I assumed all *t*-tests are independent rather than dependent, as the Cohen's *d* calculation differs slightly between them, although it doesn't change the distribution very much. 454,687 Cohen's $d_s$ estimates could be calculated from reported *t*-tests. The right tail of both distributions are very long, so I only plot the 0-99th percentiles. 
 
 <br>
 
@@ -63,11 +63,12 @@ This isn't to say that very large Cohen's *d* values of 5 or so can't occur; the
 
 What sort of things produce Cohen's *d* values of 4 or 5 and are plausible? 
 
-- "Chocolates are more desirable than human poop": Cohen's *d* = 4.52 (Balcetis & Dunning, 2009).
-- "Eating pretzels makes you thirstier than drinking water does": Cohen's d = 4.69 (Balcetis & Dunning, 2009).
-- Children tend to state that "girls tend to wear skirts more often than boys do" (Streck & Kessels, 2024, unpublished poster presentation).
+- "Chocolates are more desirable than human poop": Cohen's *d* = 4.52 ([Balcetis & Dunning, 2009](https://doi.org/10.1177/0956797609356283)).
+- "Eating pretzels makes you thirstier than drinking water does": Cohen's *d* = 4.69 ([Balcetis & Dunning, 2009](https://doi.org/10.1177/0956797609356283)).
+- Children tend to strongly agree that "girls tend to wear skirts" and strongly disagree that "boys tend to wear skirts": Cohen's *d* = 5.49 ([Streck & Kessels, 2024, unpublished poster presentation](https://raw.githubusercontent.com/ianhussey/blogdown-site/761ddc3c57423b2487e98b4ac009f434c618a983/content/posts/2025-07-26-cohens-d-8/streck_kessels_2024_gender_stereotypes_in_children.png)).
+- In studies on the valences of thousands of traits, the difference between the most negative one ('racist') and the most positive ('loving'): Cohen's *d* = 7.97 ([Britz et al., 2023](https://doi.org/10.3758/s13428-022-01921-5)).
 
-Although, as a quick aside, I have questions about even these effects, and am slowly working to replicate them and other some maximal positive control studies like this (see also [Hilgard, 2021](https://doi.org/10.1016/j.jesp.2020.104082)).
+Although, as a quick aside, I have questions about even these effects, and am slowly working to replicate them (see also [Hilgard, 2021](https://doi.org/10.1016/j.jesp.2020.104082) on 'maximal positive controls').
 
 ### Where you should probably not see Cohen's d > 4 or 5
 
@@ -101,7 +102,7 @@ In the case of Isasi et al. (2010), Gloster et al. (2020) appear to have made th
 
 When faced with a very large Cohen's *d* - not only when reading a study or meta-analysis but also when conducting one - it can be useful to think about the necessary implications of such an effect size. There are excellent Cohen's d visualization tools out there already (e.g., Kristoffer Magnusson's: [rpsychologist.com/cohend](https://rpsychologist.com/cohend)), but many of them assume the underlying data is continuous. Psychologists and other social scientists very often deal with Likert data made up of bounded integers, that is, sum scores from self-report scales where individuals' data are whole number with a logical minimum and maximum. I created a simply Shiny app  to manually construct and visualize Cohen's *d* from such bounded integer data: [errors.shinyapps.io/cohens-d-from-frequencies](https://errors.shinyapps.io/cohens-d-from-frequencies/).
 
-This can be used to interrogate the estimate for Isasi et al. (2010) presented in Gloster et al. (2020) in terms of what is known about the scale. This outcome measure reported was the Young Mania Rating Scale (YMRS), which is a 0-60 scale that has been shown to have a SD of about 4.5 to 10 in clinical samples (*N* = 211 patients, [Targum et al. 2018](https://doi.org/10.1002/mpr.1729); *N* = 209, [Suppes et al. 2016](https://doi.org/10.1176/appi.ajp.2015.15060770); *N* = 3459, [Lukasiewicz et al., 2013](https://doi.org/10.1002/mpr.1379)). Using *SD* = 10, Cohen's *d* = 8 implies an 80 point difference between the intervention and control groups, and therefore can't be obseved on the 0-60 YMRS scale. If we assume *SD* = 4.5, a Cohen's *d* of 8 implies a 36 point difference. Assuming *SD* = 4.5, let's also assume the very optimistic case that the intervention group has a very low mean of 8, this would require the control group to have a mean of 43. Large studies estimate the mean score on the YMRS in clinical samples is around 26, and a common cut-off for inclusion in RCTs is 20 ([Lukasiewicz et al., 2013](https://doi.org/10.1002/mpr.1379)). Assuming *SD* = 4.5, a Cohen's *d* of 8 would require not only the intervention to be extremely effective at 1-year follow-up, but also that all individuals in the control group would need to have very severe symptoms.   
+This can be used to interrogate the estimate for Isasi et al. (2010) presented in Gloster et al. (2020) in terms of what is known about the scale. This outcome measure reported was the Young Mania Rating Scale (YMRS), which is a 0-60 scale that has been shown to have a SD of about 4.5 to 10 in clinical samples (*N* = 211 patients, [Targum et al. 2018](https://doi.org/10.1002/mpr.1729); *N* = 209, [Suppes et al. 2016](https://doi.org/10.1176/appi.ajp.2015.15060770); *N* = 3459, [Lukasiewicz et al., 2013](https://doi.org/10.1002/mpr.1379)). Using *SD* = 10, Cohen's *d* = 8 implies an 80 point difference between the intervention and control groups, and therefore can't be observed on the 0-60 YMRS scale. If we assume *SD* = 4.5, a Cohen's *d* of 8 implies a 36 point difference. Assuming *SD* = 4.5, let's also assume the very optimistic case that the intervention group has a very low mean of 8, this would require the control group to have a mean of 43. Large studies estimate the mean score on the YMRS in clinical samples is around 26, and a common cut-off for inclusion in RCTs is 20 ([Lukasiewicz et al., 2013](https://doi.org/10.1002/mpr.1379)). Assuming *SD* = 4.5, a Cohen's *d* of 8 would require not only the intervention to be extremely effective at 1-year follow-up, but also that all individuals in the control group would need to have very severe symptoms.   
 
 <br>
 
@@ -111,5 +112,26 @@ This can be used to interrogate the estimate for Isasi et al. (2010) presented i
 
 Collectively, there is very good reason to doubt the veracity of the very large effect sizes reported in Gloster et al. (2020). Inspecting and verifying these concerns in detail like in the above can take some time, but merely observing Cohen's d = 8, 5, or perhaps even 2 in the context of a psychotherapy RCT can provide a useful starting point that signals the need for further scrutiny. Of course, ideally, these issues should be caught during the process of conducting a meta-analysis rather than years later when the article has already been cited a lot (65 times on Google Scholar at time of writing). 
 
-You can read more about the specifics of these issues in Gloster et al. (2020) in [this pubpeer comment](https://pubpeer.com/publications/B894E24B78C656FA21941142971CDE) or [this preprint (Hussey, 2025)](https://osf.io/preprints/psyarxiv/rbydj). 
+We can also use this app to visualize extreme effect sizes on Likert scale. [Britz et al.'s (2023)](https://doi.org/10.3758/s13428-022-01921-5) study on the valence of traits is useful here as they report not only means and SDs but also the frequencies of each response on the 7-point scale and, unlike other studies providing norms for word valences they had a large number of ratings per word (*N* > 200). Of the 500 attributes they assessed, the most positive one ('loving') and the most negative one ('racist') have not only extreme means but, necessarily, small *SD*s due to the bounding of the scale. *SD*s are almost never zero in samples that are not extremely small, because even on topics most of us agree on there will be the occasional person who says that 'racist' is in fact a positive attribute, as happened here. This combination of large differences in means and small *SD*s produces a very large Cohen's *d* value: *d* = 7.97, 95% CI [7.39, 8.54]. The point to appreciate here is that, on a single-item 7-point scale, it extremely difficult to produce well-estimated Cohen's *d* values that are larger than this. 
 
+<br>
+
+![](britz_et_al_2023_loving_racist.png)
+
+<br>
+
+Another useful demonstration from Britz et al.'s (2023) data is another pair of attributes that are not only extreme in their means and *SD*s but also antonyms: 'honest' and 'dishonest'. Even for words that are extremely valenced opposites, Cohen's *d* does not exceed 8: *d* = 7.76, 95% CI [7.19, 8.32]. 
+
+<br>
+
+![](britz_et_al_2023_honest_dishonest.png)
+
+<br>
+
+Of course, there is no perfect one-to-one comparison between this and the Cohen's *d* of 8 reported in Gloster et al. (2020). Multi-item scales can produce smaller *SD*s and therefore larger Cohen's *d* values, and scales with wider ranges can produce larger differences in means. To a degree - but very unlikely enough to produce a legitimate effect size of Cohen's *d* = 8.0 in an RCT on psychotherapy vs control. 
+
+While acknowledging the nuances of the comparisons of different scale ranges etc., effects like the above are a useful intuition pump. When encountering similarly large effect sizes in the literature, as yourself questions like: 
+
+> "Is this psychotherapy really more effective compared to control than people think loving people are nicer than racists (Cohen's *d* = 7.76), or more effective than the degree to which people find chocolate more desirable than poop (Cohen's *d* = 4.52)?"
+
+You can read more about the specifics of the issues I have raised about Gloster et al. (2020) in [this pubpeer comment](https://pubpeer.com/publications/B894E24B78C656FA21941142971CDE) or [this preprint (Hussey, 2025)](https://osf.io/preprints/psyarxiv/rbydj). More examples of extreme yet credible effect sizes in psychology can be found in [this](https://github.com/ianhussey/effect-size-distributions-and-extreme-examples) GitHub repository. 
