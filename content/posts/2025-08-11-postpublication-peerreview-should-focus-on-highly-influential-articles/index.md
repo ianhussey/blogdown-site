@@ -22,11 +22,11 @@ ERROR also overcomes the limitation that Gelman and King (2025) noted: both peer
 
 ### Skew in citations
 
-Citations are *extremely* skewed: the vast majority of published articles are cited very few times, with a tiny minority being cited a lot ([Radicchi et al., 2008](https://doi.org/10.1073/pnas.0806977105)). What about in psychology specifically? Using the March 2025 CrossRef database, [Jamie Cummins](https://bsky.app/profile/jamiecummins.bsky.social) and I extracted all publications in all psychology journals and their citation counts. 
+Citations are *extremely* skewed: the vast majority of published articles are cited very few times, with a tiny minority being cited a lot ([Radicchi et al., 2008](https://doi.org/10.1073/pnas.0806977105)). What about in psychology specifically? Using the March 2025 CrossRef database, [Jamie Cummins](https://bsky.app/profile/jamiecummins.bsky.social) and I extracted all publications in all psychology journals published from 2015 to 2025 and their citation counts. 
 
-The modal number of citations of psychology articles is zero. 
-
-In fact, receiving just a single citation put an article in the 30th percentile of articles published in the last decade. 
+- The modal number of citations of psychology articles is zero.
+- Receiving just a single citation put an article in the 38th percentile. 
+- The median is 4. If your article has 5 citations, it is cited more often than the majority of articles, congratulations!  
 
 The top 1% of articles attract a very disproportionate number of citations. So much so that I had to make a second subplot for them to make the plot make sense: 
 
