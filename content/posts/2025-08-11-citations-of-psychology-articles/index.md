@@ -1,6 +1,5 @@
 ---
-title: "0.32% of psychology articles receive 9.2% of citations"
-subtitle: "Post-publication peer-review should focus these influential articles"
+title: "Post-publication peer-review should focus on highly influential articles"
 layout: single
 date: "2025-08-11"
 sitemap: true
@@ -41,9 +40,13 @@ Gelman and King (2025) estimated that, in political science, 5% of all published
 
 Gelman & King's (2025) article prompted us to formalise this criterion and search strategy. Using the March 2025 Crossref database, [Jamie Cummins](https://bsky.app/profile/jamiecummins.bsky.social) and I extracted all publications in all psychology journals and their citation counts. Of the 645,164 publications (9.2%) in psychology journals in the last decade, just 2,092 articles (0.32%) received at least 30 citations per year since publication. 
 
+<br>
+
 <div style="border: 1px solid black; padding: 10px;">
 9.2% of all citations go to just 0.32% of psychology articles.
 </div>
+
+<br>
 
 Of course, others might choose different criteria, but the underlying point remains the same: Reevaluating such a subset of articles has great potential for identifying the most influential errors.  
 
