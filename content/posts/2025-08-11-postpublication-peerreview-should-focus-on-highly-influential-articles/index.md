@@ -61,9 +61,13 @@ Of course, others might choose different criteria, but the underlying point rema
 
 ### Systematizing recruitment to ERROR
 
+Future invitations to participate in the ERROR bug bounty program will be randomly drawn from the list of DOIs we created using this criterion, which includes the top .32% of articles by citations. 
+
+<br>
+
 ![](bernie.png)
 
-Future invitations to participate in the ERROR bug bounty program will be randomly drawn from the list of DOIs we created using this criterion, which includes the top .32% of articles by citations. 
+<br>
 
 Doing so will increase the generalizability of ERROR's findings, although other sources of selection bias are likely to still be present. Most notably, because ERROR requires that the original authors give their consent for the article to be reviewed, this introduces a self-selection bias. Nonetheless, an estimate of the prevalence of errors in highly cited psychology articles may still be possible using methods such as Multilevel-regression and Post-stratification (see [Alsalti et al., 2023](https://osf.io/preprints/psyarxiv/fcm3n_v1)). 
 
