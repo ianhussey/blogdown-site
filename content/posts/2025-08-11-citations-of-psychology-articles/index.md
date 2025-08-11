@@ -7,24 +7,26 @@ sitemap: true
 
 In their recent piece in the Chronical of Higher Education "Social Science Is Broken. Here’s How to Fix It", [Gelman & King (2025)](https://www.chronicle.com/article/social-science-is-broken-heres-how-to-fix-it) argued that science needs "a post-publication, citation-triggered review process," where highly cited and therefore influential articles are automatically given post-publication peer review at a certain citation threshold. 
 
+We very much agree. Our bug bounty program for science, ERROR (https://error.reviews), is already built on these principles:
+
+1. Science would benefit from mulltiple parallel systems of verification in addition to pre-publication peer review, such as a more formalised post-publication peer review process.
+2. Given finite time and resources, rexamining the most influential articles has the greatest potential to uncover important errors that might exist. 
+
 <br>
 
 [![](error_logo.png)](https://error.reviews)
 
 <br>
 
-We very much agree. Our bug bounty program for science, ERROR (https://error.reviews), is already built on these principles:
-
-1. Science would benefit from mulltiple parallel systems of verification in addition to pre-publication peer review, such as a more formalised post-publication peer review process.
-2. Given finite time and resources, rexamining the most influential articles has the greatest potential to uncover important errors that might exist. 
-
-ERROR also overcomes the limitation that Gelman and King (2025) noted: both peer reviewers and original authors are paid for the their time, with additional bonus payments made to either or both parties contingent on any errors detected.
+ERROR also overcomes the limitation that Gelman and King (2025) noted: both peer reviewers and original authors are paid for the their time, with additional bonus payments made to either or both parties contingent on any errors detected. This can provide a much-needed incentive for this work.
 
 ### Skew in citations
 
-Citations are *extremely* skewed: the vast majority of published articles are cited very few times, with a tiny minority being cited a lot ([Radicchi et al., 2008](https://doi.org/10.1073/pnas.0806977105)). 
+Citations are *extremely* skewed: the vast majority of published articles are cited very few times, with a tiny minority being cited a lot ([Radicchi et al., 2008](https://doi.org/10.1073/pnas.0806977105)). What about in psychology specifically? Using the March 2025 Crossref database, [Jamie Cummins](https://bsky.app/profile/jamiecummins.bsky.social) and I extracted all publications in all psychology journals and their citation counts. 
 
-In psychology, the modal number of citations is zero. In fact, receiving just a single citation put an article in the 30th percentile of articles published in the last decade. Just like with wealth inequality [Bernie Sanders' voice intensifies], the top 1% of article have a hugely disproportionate number of citations. So much so, that I had to make a second subplot for them to make the plot make sense. 
+The modal number of citations of psychology articles is zero. 
+
+In fact, receiving just a single citation put an article in the 30th percentile of articles published in the last decade. Just like with wealth inequality [Bernie Sanders' voice intensifies], the top 1% of articles have attract a very disproportionate number of citations. So much so that I had to make a second subplot for them to make the plot make sense. 
 
 <br>
 
@@ -38,7 +40,7 @@ As Gelman and King (2025) argue, this means that revisiting a tiny subset of all
 
 Gelman and King (2025) estimated that, in political science, 5% of all published articles account for 28% of all citations. They suggested that a 250 citations threshold might be used as the criterion to trigger post publication review. We at ERROR have been using a slightly different criterion that tries to take the recency of the publication into account: ≥30 citations per year since publication. 
 
-Gelman & King's (2025) article prompted us to formalise this criterion and search strategy. Using the March 2025 Crossref database, [Jamie Cummins](https://bsky.app/profile/jamiecummins.bsky.social) and I extracted all publications in all psychology journals and their citation counts. Of the 645,164 publications (9.2%) in psychology journals in the last decade, just 2,092 articles (0.32%) received at least 30 citations per year since publication. 
+Gelman & King's (2025) article prompted us to formalise this criterion and search strategy. Of the 645,164 publications (9.2%) in psychology journals in the last decade in the Crossref database, just 2,092 articles (0.32%) received at least 30 citations per year since publication. 
 
 <br>
 
