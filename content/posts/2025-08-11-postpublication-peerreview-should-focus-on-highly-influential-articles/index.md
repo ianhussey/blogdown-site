@@ -5,7 +5,7 @@ date: "2025-08-11"
 sitemap: true
 ---
 
-*Authors: Ian Hussey & Jamie Cummins*
+**Authors: Ian Hussey & Jamie Cummins**
 
 <br>
 
