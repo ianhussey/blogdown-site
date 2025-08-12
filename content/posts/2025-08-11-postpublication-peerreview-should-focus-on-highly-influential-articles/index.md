@@ -1,10 +1,11 @@
 ---
 title: "Post-publication peer-review should focus on highly influential articles"
-author: "Ian Hussey & Jamie Cummins" 
 layout: single
 date: "2025-08-11"
 sitemap: true
 ---
+
+*Authors: Ian Hussey & Jamie Cummins*
 
 In their recent piece in the Chronicle of Higher Education "Social Science Is Broken. Here’s How to Fix It", [Gelman & King (2025)](https://www.chronicle.com/article/social-science-is-broken-heres-how-to-fix-it) argued that science needs "a post-publication, citation-triggered review process," where highly cited and therefore influential articles are automatically given post-publication peer review at a certain citation threshold. 
 
