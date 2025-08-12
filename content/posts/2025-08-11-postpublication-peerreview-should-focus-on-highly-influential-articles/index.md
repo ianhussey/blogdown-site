@@ -52,9 +52,10 @@ Of the 645,164 publications (9.2%) in psychology journals in the last decade in 
 
 <br>
 
-<div style="border: 1px solid black; padding: 10px;">
-9.2% of all citations go to just 0.32% of psychology articles.
+<div style="border: 1px solid black; padding: 10px; text-align: center; width: fit-content; margin: auto;">
+  9.2% of all citations go to just 0.32% of psychology articles.
 </div>
+
 <br>
 
 Of course, others might choose different criteria, but the underlying point remains the same: reevaluating a tiny subset of all published articles has great potential for identifying the most influential errors and therefore improving the strength of the scientific knowledge base. 
