@@ -9,6 +9,8 @@ sitemap: true
 
 <br>
 
+<br>
+
 In their recent piece in the Chronicle of Higher Education "Social Science Is Broken. Here’s How to Fix It", [Gelman & King (2025)](https://www.chronicle.com/article/social-science-is-broken-heres-how-to-fix-it) argued that science needs "a post-publication, citation-triggered review process," where highly cited and therefore influential articles are automatically given post-publication peer review at a certain citation threshold. 
 
 We agree in many respects, and are already doing something like this. Our bug bounty program for science, [ERЯOR](https://error.reviews), is built on similar principles. We believe that:
