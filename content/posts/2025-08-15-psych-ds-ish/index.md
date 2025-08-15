@@ -156,7 +156,7 @@ github_repository_name/
 
 ## Validation rules checked by validator()
 
-`valiator()` checks whether a project is psych-DS-ish compliant if it follows all of the following rules:
+`validator()` checks whether a project is psych-DS-ish compliant if it follows all of the following rules:
 
 | **File / Directory type** | **Allowed** | **Forbidden** |
 |---------------------------|-------------|---------------|
