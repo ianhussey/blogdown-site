@@ -192,6 +192,12 @@ You can also use the function directly from the console without needing the .qmd
 
 <br>
 
+Results of `validator()` in a freshly generated project skeleton - note that some tests are not printed unless failed:
+
+![](validator.png)
+
+<br>
+
 In future, instead of just instructing students how they *should* organize a project and having to spend lots of time and thought giving them feedback on where they've gone wrong, {psychdsish} can now generate a template for them and allow them to check as the project progresses whether they're still adhering to these principles.
 
 If you find {psychdsish} to be useful in your research or teaching, or have suggestions for how to change it, please get in touch.  
