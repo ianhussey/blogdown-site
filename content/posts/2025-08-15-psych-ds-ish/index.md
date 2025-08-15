@@ -40,9 +40,7 @@ psych-DS-ish is an R package that:
 Well, yes, unfortunately. 
 
 <br>
-
 ![](standards_proliferate.png)
-
 <br>
 
 psych-DS-ish makes no attempt to define or maintain the standard itself, which is its weak point and is psych-DS's strength. I have no desire to duplicate psych-DS's great work there. psych-DS-ish is intended to be a code tool not a full data standard. psych-DS-ish could be updated in future to bring it more in line with psych-DS, or psych-DS could distribute, fork, or otherwise make use of psych-DS-ish's skeleton generation tool. If you hate it, please feel free to fork the repo and add the .json requirement back in. Also, I made this in one day, cut me some slack, sheesh.
@@ -171,13 +169,11 @@ github_repository_name/
 Before running the 'project_creator.qmd' script:
 
 ![](before.png)
-
 <br>
 
 After running the 'project_creator.qmd' script:
 
 ![](after.png)
-
 <br>
 
 You can also use the function directly from the console without needing the .qmd file, if you know your project's file path. E.g., `psychdsish::create_project_skeleton(project_root = "~/git/my_project")`.
