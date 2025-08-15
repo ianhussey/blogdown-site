@@ -127,7 +127,7 @@ github_repository_name/
 
 <br>
 
-## Skeleton project structure created by `create_project_skeleton()`
+## Skeleton project structure created by create_project_skeleton()
 
 The  `create_project_skeleton()` function creates the following project structure, including directories, license, readme, .gitignore, and Quarto templates with some defaults already set:
 
@@ -154,7 +154,7 @@ github_repository_name/
 
 <br>
 
-## Validation rules checked by `valiator()`
+## Validation rules checked by validator()
 
 `valiator()` checks whether a project is psych-DS-ish compliant if it follows all of the following rules:
 
