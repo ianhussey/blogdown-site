@@ -41,7 +41,7 @@ Well, yes, unfortunately.
 
 <br>
 
-![standards_proliferate](standards_proliferate.png)
+![](standards_proliferate.png)
 
 <br>
 
@@ -171,6 +171,24 @@ github_repository_name/
 | **Data-like files under `code/`** | None | Any `.csv`, `.xlsx`, `.tsv`, `.sav`, `.dta`, `.feather`, `.rds` |
 | **.gitignore**            | Present and configured to ignore R session files, caches, large binaries | Absent |
 | **Filenames**             | No spaces | Any filename containing spaces |
+
+<br>
+
+## Usage
+
+Before running the 'project_creator.qmd' script:
+
+![](before.png)
+
+<br>
+
+After running the 'project_creator.qmd' script:
+
+![](after.png)
+
+<br>
+
+You can also use the function directly from the console without needing the .qmd file, if you know your project's file path. E.g., `psychdsish::create_project_skeleton(project_root = "~/git/my_project")`.
 
 <br>
 
