@@ -23,6 +23,8 @@ Not enough people have heard about the great work that Melissa Kline Struhl and 
 2. psych-DS is purposefully light-weight on what it requires users to do to be compliant. I'm OK being slightly more heavy handed, especially given that my use case is a) my own projects and b) training students to do it in my R/tidyverse classes.
 3. psych-DS focuses on *testing* compliance with the standard - it has its own [validator web app](https://psych-ds.github.io/validator/) that you can check your projects with - but not (yet) on *assisting* the user in setting up a project that is compliant in the first place. Approached as a human-factors problem, this is likely to decrease uptake of psych-DS, given that tidying up a project after the fact is usually harder than providing a template up front.
 
+<br>
+
 ## psych-DS ... ish
 
 I wanted to make it easier to create and check R projects' conformity to a standard, so I created an R package to do it: [{psychdsish}](https://github.com/ianhussey/psychdsish)
@@ -37,9 +39,15 @@ psych-DS-ish is an R package that:
 
 Well, yes, unfortunately. 
 
+<br>
+
 ![standards_proliferate](standards_proliferate.png)
 
+<br>
+
 psych-DS-ish makes no attempt to define or maintain the standard itself, which is its weak point and is psych-DS's strength. I have no desire to duplicate psych-DS's great work there. psych-DS-ish is intended to be a code tool not a full data standard. psych-DS-ish could be updated in future to bring it more in line with psych-DS, or psych-DS could distribute, fork, or otherwise make use of psych-DS-ish's skeleton generation tool. If you hate it, please feel free to fork the repo and add the .json requirement back in. Also, I made this in one day, cut me some slack, sheesh.
+
+<br>
 
 ## Goal project structure
 
@@ -117,7 +125,7 @@ github_repository_name/
     └── ...
 ```
 
-
+<br>
 
 ## Skeleton project structure created by `create_project_skeleton()`
 
@@ -144,7 +152,7 @@ github_repository_name/
 └── reports/
 ```
 
-
+<br>
 
 ## Validation rules checked by `valiator()`
 
@@ -164,7 +172,7 @@ github_repository_name/
 | **.gitignore**            | Present and configured to ignore R session files, caches, large binaries | Absent |
 | **Filenames**             | No spaces | Any filename containing spaces |
 
-
+<br>
 
 In future, instead of just instructing students how they *should* organize a project and having to spend lots of time and thought giving them feedback on where they've gone wrong, {psychdsish} can now generate a template for them and allow them to check as the project progresses whether they're still adhering to these principles.
 
