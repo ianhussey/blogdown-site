@@ -29,6 +29,8 @@ Not enough people have heard about the great work that Melissa Kline Struhl and 
 
 I wanted to make it easier to create and check R projects' conformity to a standard, so I created an R package to do it: [{psychdsish}](https://github.com/ianhussey/psychdsish)
 
+![](hex_small.png)
+
 psych-DS-ish is an R package that: 
 
 1) Drops the .json requirement
