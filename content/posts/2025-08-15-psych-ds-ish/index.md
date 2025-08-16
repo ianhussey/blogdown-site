@@ -39,7 +39,7 @@ psych-DS-ish does the following:
 1) Allows user to create skeleton project structures (`create_project_skeleton()`) (or, for testing, to delete them: `delete_project_skeleton()`)
 1) Allows the user to validate a given project against psych-DS-ish rules (`validator()`). 
 
-
+### Scope
 
 "But Ian," I hear you ask, "doesn't this contribute to standards-proliferation?" 
 
