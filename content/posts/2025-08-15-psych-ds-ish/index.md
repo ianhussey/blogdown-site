@@ -29,18 +29,26 @@ I wanted to make it easier to create and check R projects' conformity to a stand
 
 ![](hex_small.png)
 
-psych-DS-ish is an R package that: 
+{psychdsish} creates a standardized project skeleton that is compliant-ish with psych-DS and also adds several features to improve reproducibility, such Quarto templates, a readme template, CC BY licence, and a .gitignore with reasonable defaults. 
+
+It also has a validator function that lets users check that their project is still compliant with the standard and, if not, tells them how to rectify it.
+
+psych-DS-ish does the following: 
 
 1) Drops the .json requirement
 1) Allows user to create skeleton project structures (`create_project_skeleton()`) (or, for testing, to delete them: `delete_project_skeleton()`)
-1) Validate a given project against psych-DS-ish rules (`validator()`). 
+1) Allows the user to validate a given project against psych-DS-ish rules (`validator()`). 
+
+
 
 "But Ian," I hear you ask, "doesn't this contribute to standards-proliferation?" 
 
 Well, yes, unfortunately. 
 
 <br>
+
 ![](standards_proliferate.png)
+
 <br>
 
 psych-DS-ish makes no attempt to define or maintain the standard itself, which is its weak point and is psych-DS's strength. I have no desire to duplicate psych-DS's great work there. psych-DS-ish is intended to be a code tool not a full data standard. psych-DS-ish could be updated in future to bring it more in line with psych-DS, or psych-DS could distribute, fork, or otherwise make use of psych-DS-ish's skeleton generation tool. If you hate it, please feel free to fork the repo and add the .json requirement back in. Also, I made this in one day, cut me some slack, sheesh.
