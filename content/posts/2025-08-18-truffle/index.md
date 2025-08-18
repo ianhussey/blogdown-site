@@ -133,6 +133,12 @@ Output:
 
 <br>
 
+Applied to a more complex design with three correlated outcomes, with more participants, and with broken headers, the data is now truly dirty. Perfect for training students to overcome the sort of data processing issues they'll encounter in the real world.
+
+![](truffle_and_dirt_complex.png)
+
+
+
 ## Code
 
 You can find the code [here](https://github.com/ianhussey/truffle) or install {truffle} using `devtools::install_github("ianhussey/truffle")`.
