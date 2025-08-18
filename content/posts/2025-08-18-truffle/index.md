@@ -80,7 +80,7 @@ Output:
 
 ![](truffle.png)
 
-<\br>
+<br>
 
 Check that the sum scores conform to the predefined properties and that the item level data is approximately normal.
 
@@ -131,7 +131,7 @@ Output:
 
 ![](truffle_and_dirt.png)
 
-<\br>
+<br>
 
 ## Code
 
