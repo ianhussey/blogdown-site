@@ -53,7 +53,7 @@ Generate data for the following experiment design (between groups factorial desi
 - Known correlations between the latent scale scores
 - Known APPROXIMATE Cohen's d between the two conditions' latent scale scores (arbitrary number, but recovered value will differ due to reliability, distortion due to converting continuous data to Likert, etc.)
 
-```
+``` r
 library(truffle)
 library(knitr)
 library(kableExtra)
@@ -84,7 +84,7 @@ Output:
 
 Check that the sum scores conform to the predefined properties and that the item level data is approximately normal.
 
-```
+``` r
 truffle_check(dat_truffle)
 ```
 
@@ -92,7 +92,7 @@ truffle_check(dat_truffle)
 
 Generate data for the same study but make the demographics data mess, add missingness, and add impossible values to the item level data.
 
-```
+``` r
 dat_truffle_and_dirt <- 
   # make truffle
   ## Likert data with known effects
