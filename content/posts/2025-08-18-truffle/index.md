@@ -152,7 +152,7 @@ Calculating sum scores is an extremely common task, and yet there are a surprisi
 
 Which items are used in the sum scoring can be specified in a number of ways, e.g., `select()`ing the items earlier in the chunk, or using a common naming prefix to select them (e.g., starting with "X1_"), or even a more sophisticated regex call to find the desired columns. 
 
-```{r}
+``` r
 dat_truffle_and_dirt <- 
   truffle_likert(study_design = "factorial_between2",
                  n_per_condition = 10,
@@ -177,7 +177,7 @@ dat_truffle_and_dirt_snuffled |>
   head(n = 20) |>
   kable() |>
   kable_classic(full_width = FALSE)
-```
+``` 
 
 | id| age|gender    |condition | X1_item1| X1_item2| X1_item3| X1_item4| X1_item5| X1_n_nonmissing| X1_sum|X1_items                                         |X1_reversed_items | X1_n_impossible|X1_impossible_items | 
 |--:|---:|:---------|:---------|--------:|--------:|--------:|--------:|--------:|---------------:|------:|:------------------------------------------------|:-----------------|---------------:|:-------------------| 
